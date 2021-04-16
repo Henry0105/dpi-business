@@ -1,0 +1,38 @@
+{
+  "job_id": "ad_crown_clean_20180601_5b10bc397fbff7f73bd7befd",
+  "job_name": "crowd_set_operation",
+  "param": [
+    {
+      "inputs": [
+        {
+          "name": "crowd1",
+          "value": "crowd1_set_out_123123",
+          "input_type": "uuid",
+          "description": "input_type=>dfs|uuid"
+        },
+        {
+          "name": "crowd2",
+          "value": "crowd2_set_out_123123",
+          "input_type": "uuid",
+          "compress_type":"tgz",
+          "description": "compress_type=>dfs压缩格式(none|tgz)"
+        },
+        {
+          "name": "crowd3",
+          "value": "crowd3_set_out_123123",
+          "input_type": "uuid",
+          "description": "input_type=>uuid(default)"
+        }
+      ],
+      "opts": {
+        "value": "(crowd1&crowd2)|crowd3",
+        "description": "代表操作方式, |代表并,&代表交,-代表差,()可以调整人群交并差集的优先级;示例:(1|2)&3|(4-2)代表1并2的结果交3并上4和2的差集"
+      },
+      "output": {
+        "value": "20180601_jimas_5b10bc397fbff7f73bd7befe",
+        "output_type": "uuid",
+        "description": "uuid=>作为唯一标识,会根据uuid持久化一份到hive中; 如果是dfs,直接打包后上传到dfs"
+      }
+    }
+  ]
+}

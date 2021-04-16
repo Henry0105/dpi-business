@@ -1,0 +1,19 @@
+{
+  "rpcHost": "", 
+  "jobName": "profile_cal_score", 
+  "rpcPort": 52853, 
+  "params": [
+    {
+      "output": {
+        "uuid": "score_123123"
+      }, 
+      "inputs": [
+        {
+          "uuid": "out_123123"
+        }
+      ]
+    }
+  ], 
+  "jobId": "profile_cal_1", 
+  "day": "20190509"
+}

@@ -1,0 +1,37 @@
+{
+  "businessName":"phone_operator_mapping",
+  "day":"20191112",
+  "jobId":"phone_operator_mapping",
+  "jobName":"phone_operator_mapping",
+  "rpc_host": "127.0.01",
+  "rpc_port": 0,
+  "params":[
+    {
+      "inputs":[{
+          "inputType":"uuid",
+          "uuid": "11328a45f49e6c545b715a1ad2831999",
+          "value":"11328a45f49e6c545b715a1ad2831999",
+          "include": {
+            "city_code": "cn1_01,cn18_06",
+            "isp_code": "1,2,3"
+          },
+          "exclude": {
+            "city_code": "cn1_01",
+            "isp_code": "1"
+          },
+          "sep": ",",
+          "header": 1,
+          "idx": 1,
+          "headers": ["in_phone", "in_day"]
+        }
+      ],
+      "output":{
+        "limit": -1,
+        "module": "demo",
+        "uuid": "hhhhhhhhhh",
+        "hdfs_output": "hdfs_output",
+        "value": "tmp/c962749665c44fa795864d91fe536f99.tar.gz"
+      }
+    }
+  ]
+}

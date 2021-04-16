@@ -1,0 +1,30 @@
+{
+  "job_id": "crowd_selection_optimization_20180815001",
+  "job_name": "crowd_selection_optimization",
+  "rpc_host": "",
+  "rpc_port": 0,
+  "day": "20190513",
+  "description": "人群包优选",
+  "params": [
+    {
+      "inputs": [
+        {
+          "uuid": "9c8db41e4073efa67a3da8d1915e5c33",
+          "id_type": 4,
+          "option": {
+            "option_type": "none",
+            "option_value": ""
+          }
+        }
+      ],
+      "output": {
+        "uuid":"crowd_selection_optimization_20180815001",
+        "value": "tmp/crowd_selection_optimization_20180815001.tar.gz",
+        "module": "demo",
+        "description": "uuid必须指明；目标文件名称",
+        "hdfs_output":"/tmp/000003_device_02",
+        "limit": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "description": "\u6e05\u6d17\u8868\u8bbe\u5907\u5bfc\u51fa,",
+  "job_id": "000003",
+  "rpc_host": "127.0.01",
+  "rpc_port": 0,
+  "day": "20190101",
+  "params": [
+    {
+      "inputs": [
+        {
+          "id_type": 1,
+          "encrypt": {
+            "encrypt_type": 0
+          },
+          "uuid": "input_uui1"
+        }
+      ],
+      "output":
+        {
+          "value": "tmp/000003_device_01",
+          "limit": 1000,
+          "module":"demo",
+          "description": "目标文件名称",
+          "id_types": [
+              4
+          ],
+          "encrypt": {
+            "encrypt_type": 2,
+            "args": {
+              "key": "v4lRvcJJV1zW5Tcs",
+              "iv": "1236966788039762"
+            }
+          },
+          "uuid": "id_mapping_uuid3",
+          "hdfs_output":"/tmp/000003_device_02"
+        }
+    }
+  ],
+  "job_name": "id_mapping"
+}

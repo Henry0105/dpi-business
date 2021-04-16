@@ -1,0 +1,30 @@
+{
+  "job_id": "crowd_selection_optimization_20180815001",
+  "job_name": "crowd_selection_optimization",
+  "description": "人群包优选",
+  "param": [
+    {
+      "input": {
+        "uuid":"crowd_selection_optimization_20190408001",
+        "value":"crowd_selection_optimization_20190408001",
+        "input_type": "uuid",
+        "description": "uuid必须指明；dfs文件源(device),压缩格式(none|tgz),如果uuid未指定或在历史设备记录表未匹配到,从dfs系统加载,否则直接读取表中数据"
+      },
+      "output": {
+        "uuid":"crowd_selection_optimization_20180408001",
+        "value": "tmp/crowd_selection_optimization_20180408001.tar.gz",
+        "module": "demo",
+        "description": "uuid必须指明；目标文件名称"
+      },
+      "limit": {
+        "value": 20000000,
+        "description": "优选数量"
+      },
+      "option": {
+        "type": "none",
+        "value": "",
+        "description": "筛选类型(none|apppkg|cate_l1_id|cate_l2_id),分别对应筛选条件(设备最近活跃时间/指定apppkg最近活跃时间/指定app类别最近活跃时间)"
+      }
+    }
+  ]
+}

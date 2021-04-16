@@ -1,0 +1,37 @@
+{
+  "jobId": "id_mapping_1",
+  "jobName": "id_mapping_v3",
+  "rpc_host": "127.0.01",
+  "rpc_port": 0,
+  "day": "20190513",
+  "description": "清洗表设备导出,",
+  "params": [
+    {
+      "inputs": [{
+        "inputType": "sql",
+        "value": "SELECT phone, device from test_database.test.table_name where day = '20190807' and mac is not null desc",
+        "idType": 1,
+        "encrypt": {
+          "encrypt_type": 0
+        },
+        "sep": ",",
+        "idx": 1
+      }],
+      "output": {
+        "value": "tmp/000003_device_02.tar.gz",
+        "limit": 2000,
+        "matchLimit": 2,
+        "module": "demo",
+        "hdfs_output": "hdfs_output",
+        "description": "目标文件名称",
+        "uuid": "it_uuid",
+        "id_types": [
+          4
+        ],
+        "encrypt": {
+          "encrypt_type": 0
+        }
+      }
+    }
+  ]
+}

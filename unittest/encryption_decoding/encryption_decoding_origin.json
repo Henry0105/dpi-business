@@ -1,0 +1,25 @@
+{
+  "rpc_port": 0,
+  "rpc_host": "127.0.0.1",
+  "job_id": "33dd2ac7cb5547a49650e1cb968d0dc3",
+  "param": {
+      "inputs": [
+        {
+          "input_type": "dfs",
+          "id_type": {
+            "value": 3
+          },
+          "value": "http://download.sdk.mob.com/6a8/f65/1600fca11e076c9865bc1f8a6d/562.4.txt"
+        }
+      ],
+      "data_process": 1,
+      "output": {
+          "value": "ad_marketing_2018072412270001_device_01.tar.gz",
+          "hdfs_output": "/tmp/33dd2ac7cb5547a49650e1cb968d0dc3/982dd7fb0ccb4a1d9e23c3eb0md5phone",
+          "limit": 1000,
+          "uuid": "phonefb0ccb4a1d9e23c3eb052fe84e",
+          "module": "demo"
+      }
+  },
+  "job_name": "data_encrypt_parse"
+}

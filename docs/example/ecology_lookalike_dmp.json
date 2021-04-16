@@ -1,0 +1,21 @@
+{
+  "job_id": "mobeyeEcology_lookalike_20180305_f95cbe240e4b4a3b881ec51d5529a955",
+  "job_name": "ecology_lookalike_dmp",
+  "description": "得出种子用户和lookalike人群最近一周的活跃app",
+  "param": [
+    {
+      "o2o_id": {
+        "value": "f95cbe240e4b4a3b881ec51d5529a955",
+        "description": ""
+      },
+      "day": {
+        "value": "20180305",
+        "description": ""
+      },
+      "where_filter": {
+        "value": "device='00004418ed03a81bf930040d243ca8b45700b69f'",
+        "description": "rp_sdk_dmp.rp_device_profile_full where "
+      }
+    }
+  ]
+}

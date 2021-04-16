@@ -1,0 +1,24 @@
+{
+  "jobId":"data_check",
+  "jobName":"data_check_edd",
+  "rpcHost":"",
+  "rpcPort":0,
+  "day":20190723,
+  "description":"数据检查的入参",
+  "params":[
+    {
+      "inputs":[
+        {
+          "inputType":"sql",
+          "value":"select price, types, name, lat, lng, property_type, cityname, district from dw_ext_crawl.fangtianxia_loupaninfo where day='20190723'",
+          "err":0.01
+        }
+      ],
+      "output":{
+        "value":"tmp/chenfq/000003_device_02",
+        "module":"optional",
+        "hdfsOutput":"tmp/data_check/144409943126089728_5c1873e54ffd7fee159e007f_chenfq"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "job_id": "crowd_selection_optimization_20180815001",
+  "job_name": "crowd_selection_optimization",
+  "rpc_host": "",
+  "rpc_port": 0,
+  "day": "20190510",
+  "description": "人群包优选",
+  "params": [
+    {
+      "inputs": [
+        {
+          "uuid": "9c8db41e4073efa67a3da8d1915e5c33",
+          "id_type": 4,
+          "option": {
+            "option_type": "apppkg",
+            "option_value": "com.tencent.mm,com.iqiyi.mm"
+          },
+          "description": "uuid必须指明；dfs文件源(device),压缩格式(none|tgz),如果uuid未指定或在历史设备记录表未匹配到,从dfs系统加载,否则直接读取表中数据"
+        }
+      ],
+      "output": {
+        "uuid":"crowd_selection_optimization_20180408001",
+        "module": "demo",
+        "hdfs_output":"/tmp/000003_device_02",
+        "limit": 10,
+        "description": "uuid必须指明；目标文件名称"
+      }
+    }
+  ]
+}

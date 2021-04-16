@@ -1,0 +1,29 @@
+# Maven #
+target/
+
+# UnitTest #
+tmp/
+**/hdfs_output/
+
+# IDEA #
+.idea/
+*.iml
+
+# Eclipse #
+.settings/
+.metadata/
+.classpath
+.project
+bin/
+Servers/
+out/
+logs/
+log
+venv/
+
+distribution/
+metastore_db/
+*.pyc
+*.log
+
+e2e/dataengine-core/src/main/resources/*

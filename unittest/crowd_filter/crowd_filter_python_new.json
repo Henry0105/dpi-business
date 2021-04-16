@@ -1,0 +1,56 @@
+{
+  "job_id": "mobeye_enterprise_customerdata_market_dmp_20190509_289784967016075264", 
+  "projectName": "mobeye", 
+  "rpc_host": null, 
+  "userId": "145", 
+  "rpc_port": 50525, 
+  "params": [
+    {
+      "inputs": [
+        {
+          "uuid": "2756620188844154882",
+          "include": {
+            "kids": "",
+            "car": "",
+            "income": "",
+            "agebin": "",
+            "model_level": "",
+            "gender": "",
+            "edu": "",
+            "occupation": "",
+            "lat_lon_list": "",
+            "catelist": "",
+            "model": "",
+            "tag_list": "PLK,PLK-AL10,PLK-CL00",
+            "cell_factory": "",
+            "country": "",
+            "province": "",
+            "city": "",
+            "permanent_country": "",
+            "permanent_province": "",
+            "permanent_city": ""
+          },
+          "exclude": {
+            "catelist": "",
+            "model": "",
+            "tag_list": "",
+            "cell_factory": "",
+            "country": "",
+            "province": "",
+            "city": "",
+            "permanent_country": "",
+            "permanent_province": "",
+            "permanent_city": ""
+          }
+        }
+      ], 
+      "output": {
+        "hdfs_output": "/tmp/dataengine/schedule/mobeye_enterprise_customerdata_market_dmp_20190509_289784967016075264/0",
+        "uuid": "289784967016075264"
+      }
+    }
+  ], 
+  "businessName": "data_engine_task", 
+  "job_name": "crowd_filter", 
+  "day": "20190510"
+}

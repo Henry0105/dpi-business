@@ -1,0 +1,33 @@
+{
+  "job_id": "098765445678976567",
+  "job_name": "crowd_set_operation",
+  "param": [
+    {
+      "inputs": [
+        {
+          "name": "crown1",
+          "value": "http://10.21.131.11:20101/fs/download?path=dataengine/demo/sample2.txt&module=dataengine",
+          "input_type": "dfs",
+          "description": "compress_type=>dfs压缩格式(none|tgz)"
+        },
+        {
+          "name": "crown2",
+          "value": "http://10.21.131.11:20101/fs/download?path=dataengine/demo/sample1.tar.gz&module=dataengine",
+          "input_type": "dfs",
+          "compress_type": "tgz",
+          "description": "compress_type=>dfs压缩格式(none|tgz)"
+        }
+      ],
+      "opts": {
+        "value": "crown2-crown1",
+        "description": "代表操作方式, |代表并,&代表交,-代表差,()可以调整人群交并差集的优先级;示例:(1|2)&3|(4-2)代表1并2的结果交3并上4和2的差集"
+      },
+      "output": {
+        "value": "demo/098765445678976567.tar.gz",
+        "module":"demo",
+        "output_type": "dfs",
+        "description": "uuid=> 作为唯一标识,会根据uuid持久化到hive中; dfs=>uuid默认是md5(value),并打包后上传到dfs"
+      }
+    }
+  ]
+}

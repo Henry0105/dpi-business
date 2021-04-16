@@ -1,0 +1,40 @@
+{
+  "job_id": "id_mapping_1",
+  "job_name": "id_mapping_v3",
+  "rpc_host": "127.0.01",
+  "rpc_port": 0,
+  "day": "20190513",
+  "description": "清洗表设备导出,",
+  "params": [
+    {
+      "inputs": [{
+        "inputType": "uuid",
+        "uuid": "11328a45f49e6c545b715a1ad2831af0",
+        "id_type": 1,
+        "encrypt": {
+          "encrypt_type": 0
+        },
+        "sep": ",",
+        "idx": 1,
+        "header": 1,
+        "headers": ["in_imei", "in_day"]
+      }],
+      "output": {
+        "matchOrigImei":0,
+        "value": "tmp/000003_device_02.tar.gz",
+        "limit": 2000,
+        "matchLimit": 2,
+        "module": "demo",
+        "hdfs_output": "hdfs_output",
+        "description": "目标文件名称",
+        "uuid": "it_uuid",
+        "id_types": [
+          4
+        ],
+        "encrypt": {
+          "encrypt_type": 0
+        }
+      }
+    }
+  ]
+}

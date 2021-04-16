@@ -1,0 +1,20 @@
+{
+  "job_id":"data_engine_task_20190618_5d08895a47f9fd57ae1fb420",
+  "job_name":"profile_cal_app_info",
+  "param":[
+    {
+      "input":{
+        "value":"495_5d087fe947f9fd57ae1fb41d"
+      },
+      "output":{
+        "day":"20190618",
+        "limit":0,
+        "module":"ad_marketing",
+        "uuid":{
+          "value":"495_5d08895a47f9fd57ae1fb420"
+        },
+        "value":"20190618_495_5d08895a47f9fd57ae1fb420_medium.tar.gz"
+      }
+    }
+  ]
+}

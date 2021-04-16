@@ -1,0 +1,36 @@
+{
+  "jobId":"carrier_profile_test", "rpcHost": "", "rpcPort": 0,
+  "jobName":"carrier_profile",
+  "day":"20200419",
+  "params":[
+    {
+      "inputs":[
+        {
+          "inputType":"dfs",
+          "uuid":"cp_in_001",
+          "idType":3,
+          "encrypt":{
+            "encryptType":0
+          },
+          "accountId":319220373160185856,
+          "productId":"stats",
+          "businessId":9,
+          "profileIds":[
+            "1_1000",
+            "2_1000"
+          ],
+          "headers": ["in_1"],
+          "idx":1,
+          "header":0,
+          "sep":","
+        }
+      ],
+      "output":{
+        "uuid":"cp_out_001",
+        "value":"dfs文件地址",
+        "hdfsOutput": "hdfs_output_cp_out_001",
+        "limit":30
+      }
+    }
+  ]
+}

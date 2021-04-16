@@ -1,0 +1,24 @@
+{
+  "rpcHost": "", 
+  "jobName": "profile_cal_app_info", 
+  "rpcPort": 55782, 
+  "params": [
+    {
+      "output": {
+        "uuid": "app_info-123123",
+        "limit": 50,
+        "order": {
+          "field": "install_tgi",
+          "asc": 0
+        }
+      }, 
+      "inputs": [
+        {
+          "uuid": "out_123123"
+        }
+      ]
+    }
+  ], 
+  "jobId": "profile_cal_1", 
+  "day": "20190510"
+}

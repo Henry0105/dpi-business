@@ -1,0 +1,42 @@
+{
+  "job_id": "profile_export_back_track_demo_3",
+  "job_name": "profile_export_back_track",
+  "description": "清洗表设备导出,",
+  "param": [
+    {
+      "input": {
+        "compress_type": "none",
+        "value": "http://api.fs.internal.mob.com/fs/download?module=dataengine&path=/tmp/dataengine/test",
+        "id_type": {
+          "value": 4,
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        },
+        "encrypt_type": {
+          "value": 0,
+          "description": "0不加密，1加密(entryMD5_32), 2: aes加密"
+        }
+      },
+      "profile_ids": [
+        "1070_1000",
+        "1071_1000",
+        "5344_1000",
+        "5345_1000",
+        "5351_1000",
+        "3124_1000",
+        "3125_1000",
+        "3126_1000",
+        "3129_1000"
+      ],
+      "description": "rp_device_financial_active_week_profile 1070_1000,1071_1000;timewindow_multiloan_finance 3124_1000,3125_1000,3126_1000,3129_1000",
+      "approximation_day": 1,
+      "min_day": "20180801",
+      "output": {
+        "uuid": "out-profile_export_back_track_demo-3",
+        "value": "tmp/out-profile_export_back_track_demo-3.tar.gz",
+        "limit": 20000000,
+        "module": "demo",
+        "description": "输出类型以及值"
+      }
+    }
+  ]
+}

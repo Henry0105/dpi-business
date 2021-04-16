@@ -1,0 +1,74 @@
+{
+  "job_id": "id_mapping_1",
+  "job_name": "id_mapping",
+  "description": "清洗表设备导出,",
+  "param": [
+    {
+      "input": {
+        "compress_type": "tgz",
+        "value": "http://10.21.131.11:20101/fs/download?path=demo/sample3.tar.gz&module=demo",
+        "description": "dfs文件源(device),压缩格式(none|tgz)",
+        "id_type": {
+          "value": 4,
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        },
+        "encrypt_type": {
+          "value": 0,
+          "description": "0不加密，1加密(entryMD5_32)"
+        }
+      },
+      "output": {
+        "value": "tmp/000003_device_01",
+        "limit": 1000,
+        "module":"demo",
+        "description": "目标文件名称",
+        "id_types": {
+          "value": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        },
+        "encrypt_type": {
+          "value": 0,
+          "description": "0不加密，1加密(entryMD5_32)"
+        }
+      }
+    },
+    {
+      "input": {
+        "input_type": "uuid",
+        "value": "11328a45f49e6c545b715a1ad2831af0",
+        "description": "缓存的device",
+        "id_type": {
+          "value": 4,
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        },
+        "encrypt_type": {
+          "value": 0,
+          "description": "0不加密，1加密(entryMD5_32)"
+        }
+      },
+      "output": {
+        "value": "tmp/000003_device_02.tar.gz",
+        "limit": 2000,
+        "module":"demo",
+        "description": "目标文件名称",
+        "id_types": {
+          "value": [
+            1,
+            2
+          ],
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        },
+        "encrypt_type": {
+          "value": 0,
+          "description": "0不加密，1加密(entryMD5_32)"
+        }
+      }
+    }
+  ]
+}

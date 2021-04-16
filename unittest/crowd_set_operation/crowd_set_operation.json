@@ -1,0 +1,32 @@
+{
+  "rpcHost": "127.0.0.1",
+  "jobName": "crowd_set_operation", 
+  "rpcPort": 0,
+  "params": [
+    {
+      "output": {
+        "opts": "(crowd1&crowd2)|crowd3",
+        "uuid": "0f18147bb13ce8b089116c79b3202c31"
+      }, 
+      "inputs": [
+        {
+          "inputType": "uuid", 
+          "name": "crowd1", 
+          "uuid": "crowd1_set_out_123123"
+        }, 
+        {
+          "inputType": "uuid", 
+          "name": "crowd2", 
+          "uuid": "crowd2_set_out_123123"
+        }, 
+        {
+          "inputType": "uuid", 
+          "name": "crowd3", 
+          "uuid": "crowd3_set_out_123123"
+        }
+      ]
+    }
+  ], 
+  "jobId": "crowd_set_operation_1", 
+  "day": "20190507"
+}

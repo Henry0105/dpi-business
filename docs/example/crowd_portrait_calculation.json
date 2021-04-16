@@ -1,0 +1,32 @@
+{
+  "job_id": "crowd_portrait_calculation_20180801006",
+  "job_name": "crowd_portrait_calculation",
+  "description": "自定义群体标签计算",
+  "param": [
+    {
+      "uuid": {
+        "value": "11328a45f49e6c545b715a1ad2831af0",
+        "description": "任务唯一id,为空时取md5(output.value)"
+      },
+      "input": {
+        "compress_type": "tgz",
+        "value": "http://10.21.131.11:20101/fs/download?path=demo/device1wincr.tgz&module=dataengine",
+        "description": "dfs文件源(device),压缩格式(none|tgz)"
+      },
+      "output": {
+        "value": "tmp/crowd_portrait_calculation_20180801006",
+        "module": "demo",
+        "description": "目标文件名称"
+      },
+      "tag_list": {
+        "value": [
+          "D001",
+          "D002",
+          "D003"
+        ],
+        "description": "Mapping码:基础标签(D001-D029, D034-D039)[http://c.mob.com/pages/viewpage.action?pageId=5665224]|金融标签(F0001-F0010, F1001-F1039)[http://c.mob.com/pages/viewpage.action?pageId=6524151]|餐饮标签(CA00-CI000)[http://c.mob.com/pages/viewpage.action?pageId=6524135]|旅游标签(LA000-LR000)[http://c.mob.com/pages/viewpage.action?pageId=6524149]"
+      }
+    }
+  ]
+}
+

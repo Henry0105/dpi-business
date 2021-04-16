@@ -1,0 +1,43 @@
+{
+  "job_id": "profile_export_back_track_demo_1",
+  "job_name": "profile_export_back_track",
+  "rpc_host": "",
+  "rpc_port": 0,
+  "description": "清洗表设备导出,",
+  "day": "20190513",
+  "params": [
+    {
+      "inputs": [
+        {
+          "uuid": "2651a527c80e491d79374c531130fdcd",
+          "id_type": 4,
+          "encrypt": {
+            "encrypt_type": 0,
+            "description": "0不加密，1加密(entryMD5_32), 2: aes加密"
+          },
+          "approximationDay": 0,
+          "minDay": "201800901",
+          "profile_ids": [
+            "1070_1000",
+            "1071_1000",
+            "5344_1000",
+            "5345_1000",
+            "5351_1000",
+            "3124_1000",
+            "3125_1000",
+            "3126_1000",
+            "3129_1000"
+          ]
+        }
+      ],
+      "output": {
+        "hdfs_output": "tmp/out-profile_export_back_track_demo-1",
+        "uuid": "out-profile_export_back_track_demo-1",
+        "value": "tmp/out-profile_export_back_track_demo-1.tar.gz",
+        "limit": 20000000,
+        "module": "demo",
+        "description": "输出类型以及值"
+      }
+    }
+  ]
+}

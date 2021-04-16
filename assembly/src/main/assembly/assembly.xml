@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>dist</id>
+    <formats>
+        <format>dir</format>
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.parent.basedir}/</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.md</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.parent.basedir}/docs</directory>
+            <outputDirectory>/docs</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+            <excludes>
+                <exclude>**/tmp/**</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.parent.basedir}/unittest</directory>
+            <outputDirectory>/unittest</outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/conf/lib</directory>
+            <outputDirectory>/lib</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/dataengine-commons/target/</directory>
+            <outputDirectory>/lib</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/dataengine-core/target/</directory>
+            <outputDirectory>/lib</outputDirectory>
+            <includes>
+                <include>*-jar-with-dependencies.jar</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/dataengine-utils/target/</directory>
+            <outputDirectory>/lib</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+                <include>jars/**</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/predict-uninstall/target/</directory>
+            <outputDirectory>/lib</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/sbin/main</directory>
+            <outputDirectory>/sbin</outputDirectory>
+            <includes>
+                <include>dataengine-submit.sh</include>
+                <include>dataengine-tools.sh</include>
+                <include>dataengine-test.sh</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/sbin/main</directory>
+            <outputDirectory>/sbin</outputDirectory>
+            <includes>
+                <include>**/*.py</include>
+                <include>**/*.sh</include>
+            </includes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.parent.basedir}/conf/target/dataengine-resources/conf</directory>
+            <outputDirectory>/conf</outputDirectory>
+            <includes>
+                <include>*/**</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.parent.basedir}/dataengine-utils/config</directory>
+            <outputDirectory>/conf</outputDirectory>
+            <includes>
+                <include>*/**</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

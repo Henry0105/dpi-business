@@ -1,0 +1,30 @@
+{
+  "description": "自定义群体标签计算", 
+  "rpc_host": null, 
+  "job_name": "crowd_portrait_calculation", 
+  "params": [
+    {
+      "inputs": [
+        {
+          "uuid": "275662018884415488",
+          "tagList": [
+            "D001",
+            "D002",
+            "D003",
+            "D004",
+            "D011"
+          ]
+        }
+      ],
+      "output": {
+        "limit": 20000000, 
+        "hdfs_output": "/tmp/dataengine/schedule/crowd_portrait_calculation_20180801006/0", 
+        "uuid": "11328a45f49e6c545b715a1ad2831af0",
+        "module": "demo"
+      }
+    }
+  ], 
+  "rpc_port": 52758, 
+  "day": "20190514", 
+  "job_id": "crowd_portrait_calculation_20180801006"
+}

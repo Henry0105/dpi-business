@@ -1,0 +1,31 @@
+{
+  "job_id": "crowd_portrait_estimation_20180723001",
+  "job_name": "crowd_portrait_estimation",
+  "description": "自定义群体画像推算",
+  "param": [
+    {
+      "uuid": {
+        "value": "C1328a45f49e6c545b715a1ad2831af1",
+        "description": "任务唯一id,为空时取md5(output.value)"
+      },
+      "input": {
+        "compress_type": "tgz",
+        "value": "http://10.6.98.125:20101/fs/download?path=demo/device500w.tgz&module=dataengine",
+        "description": "dfs文件源(device),压缩格式(none|tgz)"
+      },
+      "output": {
+        "value": "tmp/crowd_portrait_estimation_20180723001",
+        "module": "demo",
+        "description": "目标文件名称"
+      },
+      "tag_list": {
+        "value": [
+          "CP001",
+          "CP002"
+        ],
+        "description": "CP001:家居画像,CP002:服饰箱包画像"
+      }
+    }
+  ]
+}
+

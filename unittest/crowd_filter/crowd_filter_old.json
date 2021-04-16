@@ -1,0 +1,49 @@
+{
+  "businessName": "data_engine_task",
+  "job_id": "mobeye_enterprise_customerdata_market_dmp_20190509_289784967016075264",
+  "job_name": "crowd_filter",
+  "param": [
+    {
+      "agebin": {
+        "value": ""
+      },
+      "car": {
+        "value": ""
+      },
+      "catelist": [],
+      "cell_factory": [],
+      "edu": {
+        "value": ""
+      },
+      "gender": {
+        "value": ""
+      },
+      "income": {
+        "value": ""
+      },
+      "input": {
+        "input_type": "uuid",
+        "value": "289783193633816576"
+      },
+      "kids": {
+        "value": ""
+      },
+      "model": [],
+      "model_level": {
+        "value": ""
+      },
+      "occupation": {
+        "value": ""
+      },
+      "output": {
+        "limit": 2147483647,
+        "module": "mobeye",
+        "uuid": "289784967016075264",
+        "value": "/user/mobeye/customdatamarket/dmp/20190509/145/mobeye_customdatamarket_dmp_289784967016075264.tar.gz"
+      },
+      "tag_list": []
+    }
+  ],
+  "projectName": "mobeye",
+  "userId": "145"
+}

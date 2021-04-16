@@ -1,0 +1,28 @@
+{
+  "job_id": "e3a9def6f5d2",
+  "job_name": "crowd_filter",
+  "description": "字段详情见http://c.mob.com/pages/viewpage.action?pageId=5668766",
+  "param": [
+    {
+      "param_id": "param_id",
+      "input": {
+        "uuid":  "275662018884415488",
+        "value": "275662018884415488",
+        "input_type": "uuid",
+        "description": "device文件目录"
+      },
+      "output": {
+        "value": "it_uuid",
+        "description": "dfs路径"
+      },
+      "target_name": {
+        "value": "e3a9def6f5d2",
+        "description": "dfs目标文件名称"
+      },
+      "agebin": {
+        "value": "5",
+        "description": "年龄"
+      }
+    }
+  ]
+}

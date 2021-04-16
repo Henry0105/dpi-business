@@ -1,0 +1,38 @@
+{
+  "jobId":"carrier_profile_test", "rpcHost": "", "rpcPort": 0,
+  "jobName":"getui_profile",
+  "day":"20200419",
+  "params":[
+    {
+      "inputs":[
+        {
+          "inputType":"dfs",
+          "uuid":"gp_in_001",
+          "idType":1,
+          "encrypt":{
+            "encryptType":1
+          },
+          "accountId":319220373160185856,
+          "productId":"stats",
+          "businessId":9,
+          "profileIds":[
+            "1_1000",
+            "2_1000",
+            "17_1000",
+            "19_1000"
+          ],
+          "headers": ["in_1"],
+          "idx":1,
+          "header":0,
+          "sep":","
+        }
+      ],
+      "output":{
+        "uuid":"gp_out_001",
+        "value":"dfs文件地址",
+        "hdfsOutput": "hdfs_output_gp_out_001",
+        "limit":30
+      }
+    }
+  ]
+}

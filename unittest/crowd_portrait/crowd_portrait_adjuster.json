@@ -1,0 +1,75 @@
+{
+  "job_id": "crowd_portrait_adjuster_20180906",
+  "job_name": "crowd_portrait_adjuster",
+  "description": "标签美化",
+  "param": [
+    {
+      "param_id": "11328a45f49e6c545b715a1ad2831af0",
+      "input": {
+        "uuid": "11328a45f49e6c545b715a1ad2831af0_crowd_portrait_calculation_out",
+        "value": "11328a45f49e6c545b715a1ad2831af0_crowd_portrait_calculation_out",
+        "input_type":{
+          "value": "uuid"
+        }
+      },
+      "output": {
+        "uuid": "11328a45f49e6c545b715a1ad2831af0_crowd_portrait_adjuster_out",
+        "value": "tmp/11328a45f49e6c545b715a1ad2831af0_crowd_portrait_adjuster_out",
+        "module": "demo",
+        "description": "目标文件名称"
+      },
+      "match_ios_count": 200,
+      "source": "public double[][] process(String[] keys, double matchIOSCount, double[] androidCounts, double[] androidRatios,\n    double[] iosRatios) {\n  double androidTolCnt = 0d;\n  for (double d : androidCounts) {\n    androidTolCnt += d;\n  }\n  double tmpTotal = 0d;\n  double[] tmp = new double[keys.length];\n  for (int i = 0; i < keys.length; i++) {\n    tmp[i] = (androidCounts[i] * iosRatios[i]) / (androidTolCnt * androidRatios[i]);\n    tmpTotal += tmp[i];\n  }\n  double[] iosCounts = new double[keys.length];\n  double iosTolCount = 0d;\n  for (int i = 0; i < keys.length; i++) {\n    iosCounts[i] = Math.round((tmp[i] / tmpTotal) * matchIOSCount);\n    iosTolCount += iosCounts[i];\n  }\n  double tolCnt = iosTolCount + androidTolCnt;\n  double[] finalPercents = new double[keys.length];\n  for (int i = 0; i < keys.length; i++) {\n    finalPercents[i] = (iosCounts[i] + androidCounts[i]) / tolCnt;\n  }\n  return new double[][]{iosCounts, finalPercents};\n}",
+      "description": "matchIOSCount=>uuid中匹配到的ios数量(目前只有id_mapping中mac才会cnt,其他情况为0,跳过美化)",
+      "tag_list": [
+        {
+          "tag": "D004",
+          "config": [
+            {
+              "key_name": "0",
+              "ios_ratio": 0.439,
+              "android_ratio": 0.559
+            },
+            {
+              "key_name": "1",
+              "ios_ratio": 0.559,
+              "android_ratio": 0.439
+            },
+            {
+              "key_name": "-1",
+              "ios_ratio": 0.002,
+              "android_ratio": 0.002
+            }
+          ],
+          "description": "性别[0男；1女；-1未知]"
+        },
+        {
+          "tag": "D011",
+          "config": [
+            {
+              "key_name": "0",
+              "ios_ratio": 0.72,
+              "android_ratio": 0.08
+            },
+            {
+              "key_name": "1",
+              "ios_ratio": 0.2,
+              "android_ratio": 0.24
+            },
+            {
+              "key_name": "2",
+              "ios_ratio": 0.05,
+              "android_ratio": 0.21
+            },
+            {
+              "key_name": "-1",
+              "ios_ratio": 0.03,
+              "android_ratio": 0.47
+            }
+          ],
+          "description": "设备档次[0高级；1中级；2低级；-1未知]"
+        }
+      ]
+    }
+  ]
+}

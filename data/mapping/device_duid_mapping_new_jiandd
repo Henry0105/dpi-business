@@ -1,0 +1,5 @@
+device,duid,plat,dcookie,processtime
+device001,duid001,1,,20191123
+device002,duid002,1,,20191122
+device003,duid003,2,,20191120
+device004,duid004,2,,20191119

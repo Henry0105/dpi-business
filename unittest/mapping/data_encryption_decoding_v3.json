@@ -1,0 +1,35 @@
+{
+  "rpc_port": 0,
+  "rpc_host": "127.0.0.1",
+  "jobId":"33dd2ac7cb5547a49650e1cb968d0dc3",
+  "jobName":"data_encrypt_parse_v2",
+  "day":"20190513",
+  "params":[
+    {
+      "inputs":[
+        {
+          "inputType": "dfs",
+          "idType":3,
+          "uuid":"jiandd_123",
+          "sep":",",
+          "idx":1,
+          "header":1,
+          "headers":["in_phone","in_name","in_age"]
+        }
+      ],
+      "output":{
+        "limit":2000,
+        "module":"demo",
+        "uuid":"jiandd_234",
+        "encryption":0,
+        "encrypt":{
+          "encryptType":1,
+          "args":{
+            "key":"v4lRvcJJV1zW5Tcs",
+            "iv":"1236966788039762"
+          }
+        }
+      }
+    }
+  ]
+}

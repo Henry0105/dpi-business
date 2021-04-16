@@ -1,0 +1,42 @@
+{
+  "jobId":"profile_cal_1",
+  "jobName":"profile_cal_group",
+  "rpcHost":"",
+  "rpcPort":0,
+  "day":20190624,
+  "description":"群体画像的入参",
+  "params":[
+    {
+      "inputs":[
+        {
+          "uuid":"144409943126089728_5c1873e54ffd7fee159e007f",
+          "inputType": "uuid",
+          "profileIds":[
+            "2_1001",
+            "3_1000",
+            "4466_1000",
+            "1034_1000",
+            "7_1000"
+          ],
+          "filter":{
+            "1036_1000":"cn"
+          }
+        }
+      ],
+      "output":{
+        "value":"tmp/chenfq/000003_device_01",
+        "module":"可选",
+        "uuid":"144409943126089728_5c1873e54ffd7fee159e007f_chenfq",
+        "pairSep":" ",
+        "confSep":" ",
+        "display":1,
+        "limit":1000,
+        "hdfsOutput":"tmp/profile_cal_group/test",
+        "order": [{
+          "field": "percent",
+          "asc": 0
+        }]
+      }
+    }
+  ]
+}

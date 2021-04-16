@@ -1,0 +1,37 @@
+{
+  "job_id": "crowd_set_operation_1",
+  "job_name": "crowd_set_operation",
+  "param": [
+    {
+      "inputs": [
+        {
+          "name": "crown1",
+          "value": "jimas_5b0fcb0c777ffff1fbeb995d",
+          "input_type": "uuid",
+          "description": "input_type=>dfs|uuid"
+        },
+        {
+          "name": "crown2",
+          "value": "http://10.21.131.11:20101/fs/download?module=dataengine&path=dataengine/demo/device_crowd_secondary_filter.tar.gz",
+          "input_type": "dfs",
+          "compress_type":"tgz",
+          "description": "compress_type=>dfs压缩格式(none|tgz)"
+        },
+        {
+          "name": "crown3",
+          "value": "jimas_5b0fcb583b7f3dcd51baf8e1",
+          "description": "input_type=>uuid(default)"
+        }
+      ],
+      "opts": {
+        "value": "(crown1|crown2)&crown3",
+        "description": "代表操作方式, |代表并,&代表交,-代表差,()可以调整人群交并差集的优先级;示例:(1|2)&3|(4-2)代表1并2的结果交3并上4和2的差集"
+      },
+      "output": {
+        "value": "20180601_jimas_5b10bc397fbff7f73bd7befe",
+        "output_type": "uuid",
+        "description": "uuid=> 作为唯一标识,会根据uuid持久化到hive中; dfs=>uuid默认是md5(value),并打包后上传到dfs"
+      }
+    }
+  ]
+}

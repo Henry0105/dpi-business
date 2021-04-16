@@ -1,0 +1,23 @@
+{
+  "job_id": "data-engine-toolplat302474078532591616_1_20190613160500",
+  "job_name": "profile_cal_app_info",
+  "param": [{
+    "input": {
+      "compress_type": "none",
+      "input_type": "dfs",
+      "value": "dfs_url"
+    },
+    "output": {
+      "limit": 100000,
+      "module": "date-engine-toolplat",
+      "order": {
+        "asc": 0,
+        "field": "index"
+      },
+      "uuid": {
+        "value": "output_uuid"
+      },
+      "value": "output_dfs_url"
+    }
+  }]
+}

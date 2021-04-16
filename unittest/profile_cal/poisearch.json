@@ -1,0 +1,27 @@
+{
+  "job_id": "poi_search_1",
+  "job_name": "poi_search",
+  "description": "高级选址",
+  "params": [
+    {
+      "store_id": "23343a5252aa4935b20689bee15353b3",
+      "uuid": "123_23343a5252aa4935b20689bee15353b3",
+      "day": "20181205",
+      "data_type": {
+        "value": 1,
+        "description": "经纬度"
+      },
+      "data_list": "[121.436121,31.194661],[121.486609,31.280863]"
+    },
+    {
+      "store_id": "48e03444e93a4feba881dd7e21c43150",
+      "uuid": "123_48e03444e93a4feba881dd7e21c43150",
+      "day": "20181205",
+      "data_type": {
+        "value": 2,
+        "description": "区域编码"
+      },
+      "data_list": "cn1_01_04"
+    }
+  ]
+}

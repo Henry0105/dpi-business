@@ -1,0 +1,58 @@
+{
+  "job_id": "e3a9def6f5d2",
+  "job_name": "calculation_portrait",
+  "description": "生成画像、媒介",
+  "param": [
+    {
+      "data_array": [
+        {
+          "day": "20180426",
+          "dmp": {
+            "agebin": "5,6",
+            "car": "1",
+            "cate_list": {
+              "in": "",
+              "notin": ""
+            },
+            "cell_factory": {
+              "in": "",
+              "notin": ""
+            },
+            "edu": "7,8",
+            "gender": "0,1",
+            "income": "4,5",
+            "kids": "3,4",
+            "model": {
+              "in": "",
+              "notin": ""
+            },
+            "model_level": "0,1",
+            "occupation": "14,16",
+            "tag_list": {
+              "in": "",
+              "notin": ""
+            }
+          },
+          "do_now": 0,
+          "export_path": "hdfs:///tmp/mobeye/o2o/dataengine_dmp_20180426_jimas_tmp",
+          "location_info": {
+            "city": "",
+            "data_type": "",
+            "lat_lon_list": "",
+            "province": ""
+          },
+          "o2o_id": "5ae19ec57f7f7fbbc6ab3b87",
+          "operate_type": "1,2,3",
+          "output": "1,2",
+          "persons_info": {
+            "begin_day": "",
+            "daily_monthly": "",
+            "end_day": ""
+          },
+          "userid": "jimas"
+        }
+      ],
+      "source_type": 4
+    }
+  ]
+}

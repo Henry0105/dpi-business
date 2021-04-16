@@ -1,0 +1,178 @@
+{
+  "job_id": "e3a9def6f5d2",
+  "job_name": "crowd_filter",
+  "description": "字段详情见http://c.mob.com/pages/viewpage.action?pageId=5668766",
+  "param": [
+    {
+      "param_id": "param_id",
+      "input": {
+        "value": "http://10.21.131.11:20101/fs/download?module=dataengine&path=dataengine/demo/oneplaceid",
+        "description": "device文件目录"
+      },
+      "output": {
+        "value": "http://10.21.131.11:20100/mobeye/upload3",
+        "uuid": "cf_output_uuid",
+        "description": "dfs路径"
+      },
+      "target_name": {
+        "value": "e3a9def6f5d2",
+        "description": "dfs目标文件名称"
+      },
+      "applist": {
+        "value": "m.taobao.com"
+      },
+      "agebin": {
+        "value": "5,6",
+        "description": "年龄"
+      },
+      "car": {
+        "value": "1",
+        "description": "有车人群1,无车人群0"
+      },
+      "cell_factory": [
+        {
+          "value": "MEIZU,VIVO",
+          "opt": "in",
+          "description": "手机型号"
+        },
+        {
+          "value": "360,other",
+          "opt": "notin",
+          "description": "手机型号"
+        }
+      ],
+      "edu": {
+        "value": "7,8",
+        "description": "教育"
+      },
+      "gender": {
+        "value": "0",
+        "description": "性别 男性:0"
+      },
+      "income": {
+        "value": "4,5",
+        "description": "收入"
+      },
+      "kids": {
+        "value": "1,3",
+        "description": "小孩"
+      },
+      "model": [
+        {
+          "value": "VIVO Y55A,GT-I9305",
+          "opt": "in",
+          "description": "包含机型"
+        },
+        {
+          "value": "SM-G900K",
+          "opt": "notin",
+          "description": "排除机型"
+        }
+      ],
+      "model_level": {
+        "value": "0,1",
+        "description": "机型level(高端机型0,中端机型1,低端机型2)"
+      },
+      "occupation": {
+        "value": "14,16",
+        "description": "职业"
+      },
+      "tag_list": [
+        {
+          "value": "A00,B0T,557",
+          "opt": "in",
+          "description": "应用属性包含"
+        },
+        {
+          "value": "A0G,B1C",
+          "opt": "notin",
+          "description": "应用属性不包含"
+        }
+      ],
+      "catelist": [
+        {
+          "value": "7014_007,7006_001",
+          "opt": "in",
+          "description": "应用分类"
+        },
+        {
+          "value": "7014_006,7007_002",
+          "opt": "notin",
+          "description": "应用分类"
+        }
+      ],
+      "country": [
+        {
+          "value": "cn,in",
+          "opt": "in",
+          "description": "国家"
+        },
+        {
+          "value": "dz,us",
+          "opt": "notin",
+          "description": "国家"
+        }
+      ],
+      "province": [
+        {
+          "value": "cn16,cn10",
+          "opt": "in",
+          "description": "省份"
+        },
+        {
+          "value": "cn8,cn12",
+          "opt": "notin",
+          "description": "省份"
+        }
+      ],
+      "city": [
+        {
+          "value": "cn16_03,cn10_16",
+          "opt": "in",
+          "description": "城市"
+        },
+        {
+          "value": "cn8_19,cn12_10",
+          "opt": "notin",
+          "description": "城市"
+        }
+      ],
+      "permanent_country": [
+        {
+          "value": "cn,in",
+          "opt": "in",
+          "description": "常驻国家"
+        },
+        {
+          "value": "dz,us",
+          "opt": "notin",
+          "description": "常驻国家"
+        }
+      ],
+      "permanent_province": [
+        {
+          "value": "cn16,cn10",
+          "opt": "in",
+          "description": "常驻省份"
+        },
+        {
+          "value": "cn8,cn12",
+          "opt": "notin",
+          "description": "常驻省份"
+        }
+      ],
+      "permanent_city": [
+        {
+          "value": "cn16_03,cn10_16",
+          "opt": "in",
+          "description": "常驻城市"
+        },
+        {
+          "value": "cn8_19,cn12_10",
+          "opt": "notin",
+          "description": "常驻城市"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "job_id": "national_visitor_1",
+  "job_name": "national_visitor",
+  "description": "全国客流计算",
+  "param": {
+    "rank_date": "20181206",
+    "first_day": "20181205",
+    "last_day": "20181205",
+    "uuids": [
+      "145_0b4910d7c29e4bbdbde22763949ff7ec",
+      "145_0b4910d7c29e4bbdbde22763949ff7ec_2"
+    ],
+    "day": "20181206"
+  }
+}

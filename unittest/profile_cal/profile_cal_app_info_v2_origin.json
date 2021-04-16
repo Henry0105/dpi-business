@@ -1,0 +1,47 @@
+{
+  "jobId":"data_engine_task_20190618_5d08895a47f9fd57ae1fb420",
+  "jobName":"profile_cal_app_info_v2",
+  "params":[
+    {
+      "inputs":[{
+        "value":"495_5d087fe947f9fd57ae1fb41d"
+      }],
+      "output":{
+        "day":"20190618",
+        "limit": 50,
+        "threshold": {
+          "install": 0.01,
+          "active": 0.01
+        },
+        "order": [{
+          "field": "install_tgi",
+          "asc": 0
+        }],
+        "module":"ad_marketing",
+        "uuid":{
+          "value":"495_5d08895a47f9fd57ae1fb420_cfq"
+        },
+        "value":"20190618_495_5d08895a47f9fd57ae1fb420_medium_cfq.tar.gz"
+      }
+    },
+    {
+      "inputs":[{
+        "compressType":"none",
+        "inputType":"dfs",
+        "value":"http://10.21.131.11:20101/fs/download?module=date-engine-toolplat&path=toolplat/dev/9eac1a76e23d4226afeb1cdc68aa1f8b_device8w.txt"
+      }],
+      "output":{
+        "limit":100000,
+        "module":"date-engine-toolplat",
+        "order":[{
+          "asc":0,
+          "field":"index"
+        }],
+        "uuid":{
+          "value":"20190617162800_b5876c001b6a48a7a1afd44103d830f0"
+        },
+        "value":"toolplat/dev/063f95ef110c4c528d36bd365f889d4c.tar.gz"
+      }
+    }
+  ]
+}

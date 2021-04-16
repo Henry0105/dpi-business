@@ -1,0 +1,27 @@
+{
+  "job_id": "profile_cal_1",
+  "job_name": "profile_cal_batch_monomer",
+  "rpc_host": "",
+  "rpc_port": 0,
+  "day": "20190510",
+  "params": [
+    {
+      "inputs":[
+        {
+          "inputType": "uuid",
+          "uuid": "input_uuid",
+          "idType": 4,
+          "profileIds": ["2_1001","3_1000","4466_1000", "1034_1000", "7_1000", "4_1000"]
+        }
+      ],
+      "output": {
+        "value": "tmp/chenfq/000003_device_01",
+        "module":"可选",
+        "uuid": "output_uuid",
+        "display": 1,
+        "limit": 1000,
+        "hdfs_output": "tmp/chenfq"
+      }
+    }
+  ]
+}

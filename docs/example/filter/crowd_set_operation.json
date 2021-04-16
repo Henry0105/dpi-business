@@ -1,0 +1,29 @@
+{
+  "job_id": "987656jh2hj87b1212",
+  "job_name": "crowd_set_operation",
+  "param": [
+    {
+      "inputs": [
+        {
+          "name": "crown1",
+          "value": "http://10.21.131.11:20101/fs/download?path=dataengine/demo/sample2.txt&module=dataengine",
+          "input_type": "dfs",
+          "description": "compress_type=>dfs压缩格式(none|tgz)"
+        },
+        {
+          "name": "crown2",
+          "value": "11328a45f49e6c545b715a1ad2831af0",
+          "input_type": "uuid"
+        }
+      ],
+      "opts": {
+        "value": "crown2 | crown1",
+        "description": "代表操作方式, |代表并,&代表交,-代表差,()可以调整人群交并差集的优先级;示例:(1|2)&3|(4-2)代表1并2的结果交3并上4和2的差集"
+      },
+      "output": {
+        "value": "987656jh2hj87b1212",
+        "output_type": "uuid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1821 @@
+[
+  {
+    "label": "D001",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "国家",
+    "field": "country",
+    "filter": "country not in ('other','-1','OTHER','其他','未知','unknown','UNKNOWN','')"
+  },
+  {
+    "label": "D002",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "省份",
+    "field": "province"
+  },
+  {
+    "label": "D003",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "城市",
+    "field": "city"
+  },
+  {
+    "label": "D004",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "性别",
+    "field": "gender"
+  },
+  {
+    "label": "D005",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "年龄",
+    "field": "agebin"
+  },
+  {
+    "label": "D006",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "人物标签",
+    "field": "segment"
+  },
+  {
+    "label": "D007",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "教育",
+    "field": "edu"
+  },
+  {
+    "label": "D008",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "子女年龄",
+    "field": "kids"
+  },
+  {
+    "label": "D009",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "收入",
+    "field": "income"
+  },
+  {
+    "label": "D010",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "厂商",
+    "field": "cell_factory"
+  },
+  {
+    "label": "D011",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "设备级别",
+    "field": "model_level"
+  },
+  {
+    "label": "D012",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "总装量",
+    "field": "tot_install_apps"
+  },
+  {
+    "label": "D013",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "标签列表",
+    "field": "tag_list"
+  },
+  {
+    "label": "D014",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "设备型号",
+    "field": "model"
+  },
+  {
+    "label": "D015",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "运营商代码",
+    "field": "carrier"
+  },
+  {
+    "label": "D016",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "网络",
+    "field": "network"
+  },
+  {
+    "label": "D017",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "分辨率",
+    "field": "screensize"
+  },
+  {
+    "label": "D018",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "操作系统",
+    "field": "sysver"
+  },
+  {
+    "label": "D019",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "城市等级",
+    "field": "city_level"
+  },
+  {
+    "label": "D020",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "常驻国家",
+    "field": "permanent_country"
+  },
+  {
+    "label": "D021",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "常驻省份",
+    "field": "permanent_province"
+  },
+  {
+    "label": "D022",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "常驻城市",
+    "field": "permanent_city"
+  },
+  {
+    "label": "D023",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "职业",
+    "field": "occupation"
+  },
+  {
+    "label": "D024",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "房产情况",
+    "field": "house"
+  },
+  {
+    "label": "D025",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "偿还能力",
+    "field": "repayment"
+  },
+  {
+    "label": "D026",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "车产情况",
+    "field": "car"
+  },
+  {
+    "label": "D027",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "工作地",
+    "field": "workplace"
+  },
+  {
+    "label": "D028",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "居住地",
+    "field": "residence"
+  },
+  {
+    "label": "D029",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "婚姻状况",
+    "field": "married"
+  },
+  {
+    "label": "D034",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "应用类型偏好",
+    "field": "applist",
+    "extend": [
+      "select cat2_id,tag_id from dm_sdk_mapping.tag_cat_mapping_dmp_par where version=1000.20180521"
+    ]
+  },
+  {
+    "label": "D035",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "人生阶段",
+    "field": "life_stage"
+  },
+  {
+    "label": "D036",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "特定时期",
+    "field": "special_time"
+  },
+  {
+    "label": "D037",
+    "table": "rp_mobdi_app.rp_device_profile_full_view",
+    "module": "DeviceProfileFull",
+    "description": "所在行业",
+    "field": "industry"
+  },
+  {
+    "label": "D038",
+    "table": "rp_mobdi_app.rp_device_outing",
+    "module": "DeviceOuting",
+    "description": "出境国家",
+    "field": "out_country"
+  },
+  {
+    "label": "D039",
+    "table": "rp_mobdi_app.rp_device_outing",
+    "module": "DeviceOuting",
+    "description": "出境次数",
+    "field": "tot_times"
+  },
+  {
+    "label": "F0001",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "借贷App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin01_7_40'"
+  },
+  {
+    "label": "F0001",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "借贷App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin01_7_40'"
+  },
+  {
+    "label": "F0002",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "银行App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin02_7_40'"
+  },
+  {
+    "label": "F0002",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "银行App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin02_7_40'"
+  },
+  {
+    "label": "F0003",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "投资App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin03_7_40'"
+  },
+  {
+    "label": "F0003",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "投资App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin03_7_40'"
+  },
+  {
+    "label": "F0004",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "理财App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin06_7_40'"
+  },
+  {
+    "label": "F0004",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "理财App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin06_7_40'"
+  },
+  {
+    "label": "F0005",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "证券App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin05_7_40'"
+  },
+  {
+    "label": "F0005",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "证券App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin05_7_40'"
+  },
+  {
+    "label": "F0006",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "保险App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin04_7_40'"
+  },
+  {
+    "label": "F0006",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "保险App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin04_7_40'"
+  },
+  {
+    "label": "F0007",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "信用卡App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='505_7_40'"
+  },
+  {
+    "label": "F0007",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "信用卡App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='505_7_40'"
+  },
+  {
+    "label": "F0008",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "金融类App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin07_7_40'"
+  },
+  {
+    "label": "F0008",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "金融类App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin07_7_40'"
+  },
+  {
+    "label": "F0009",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "金融类App安装量占比",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='fin08_7_40'"
+  },
+  {
+    "label": "F0009",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstalledProfile",
+    "description": "金融类App安装量占比",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='fin08_7_40'"
+  },
+  {
+    "label": "F0010",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "支付类App安装量",
+    "field": "feature",
+    "filter": "flag=7 and timewindow='40' and feature='598_7_40'"
+  },
+  {
+    "label": "F0010",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "支付类App安装量",
+    "field": "cnt",
+    "filter": "flag=7 and timewindow='40' and feature='598_7_40'"
+  },
+  {
+    "label": "F1001",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "借贷App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin01_0_7'"
+  },
+  {
+    "label": "F1001",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "借贷App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin01_0_7'"
+  },
+  {
+    "label": "F1002",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "银行App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin02_0_7'"
+  },
+  {
+    "label": "F1002",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "银行App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin02_0_7'"
+  },
+  {
+    "label": "F1003",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "投资App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin03_0_7'"
+  },
+  {
+    "label": "F1003",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "投资App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin03_0_7'"
+  },
+  {
+    "label": "F1004",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "理财App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin06_0_7'"
+  },
+  {
+    "label": "F1004",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "理财App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin06_0_7'"
+  },
+  {
+    "label": "F1005",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "证券App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin05_0_7'"
+  },
+  {
+    "label": "F1005",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "证券App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin05_0_7'"
+  },
+  {
+    "label": "F1006",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "保险App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin04_0_7'"
+  },
+  {
+    "label": "F1006",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "保险App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin04_0_7'"
+  },
+  {
+    "label": "F1007",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "金融类App新安装量_7天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='7' and feature='fin07_0_7'"
+  },
+  {
+    "label": "F1007",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialInstallProfile",
+    "description": "金融类App新安装量_7天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='7' and feature='fin07_0_7'"
+  },
+  {
+    "label": "F1008",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "保险关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin04_3_30'"
+  },
+  {
+    "label": "F1008",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "保险关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin04_3_30'"
+  },
+  {
+    "label": "F1009",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "借贷关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin01_3_30'"
+  },
+  {
+    "label": "F1009",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "借贷关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin01_3_30'"
+  },
+  {
+    "label": "F1010",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "银行关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin02_3_30'"
+  },
+  {
+    "label": "F1010",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "银行关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin02_3_30'"
+  },
+  {
+    "label": "F1011",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "投资关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin03_3_30'"
+  },
+  {
+    "label": "F1011",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "投资关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin03_3_30'"
+  },
+  {
+    "label": "F1012",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "证券关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin05_3_30'"
+  },
+  {
+    "label": "F1012",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "证券关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin05_3_30'"
+  },
+  {
+    "label": "F1013",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "理财关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin06_3_30'"
+  },
+  {
+    "label": "F1013",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "理财关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin06_3_30'"
+  },
+  {
+    "label": "F1014",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "金融类关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='fin07_3_30'"
+  },
+  {
+    "label": "F1014",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveMonthProfile",
+    "description": "金融类关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='fin07_3_30'"
+  },
+  {
+    "label": "F1015",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "保险关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin04_3_90'"
+  },
+  {
+    "label": "F1015",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "保险关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin04_3_90'"
+  },
+  {
+    "label": "F1016",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "借贷关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin01_3_90'"
+  },
+  {
+    "label": "F1016",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "借贷关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin01_3_90'"
+  },
+  {
+    "label": "F1017",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "银行关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin02_3_90'"
+  },
+  {
+    "label": "F1017",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "银行关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin02_3_90'"
+  },
+  {
+    "label": "F1018",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "投资关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin03_3_90'"
+  },
+  {
+    "label": "F1018",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "投资关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin03_3_90'"
+  },
+  {
+    "label": "F1019",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "证券关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin05_3_90'"
+  },
+  {
+    "label": "F1019",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "证券关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin05_3_90'"
+  },
+  {
+    "label": "F1020",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "理财关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin06_3_90'"
+  },
+  {
+    "label": "F1020",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "理财关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin06_3_90'"
+  },
+  {
+    "label": "F1021",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "金融类关注度_90天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='90' and feature='fin07_3_90'"
+  },
+  {
+    "label": "F1021",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActive3MonthProfile",
+    "description": "金融类关注度_90天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='90' and feature='fin07_3_90'"
+  },
+  {
+    "label": "F1022",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "保险关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin04_3_7'"
+  },
+  {
+    "label": "F1022",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "保险关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin04_3_7'"
+  },
+  {
+    "label": "F1023",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "借贷关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin01_3_7'"
+  },
+  {
+    "label": "F1023",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "借贷关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin01_3_7'"
+  },
+  {
+    "label": "F1024",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "银行关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin02_3_7'"
+  },
+  {
+    "label": "F1024",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "银行关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin02_3_7'"
+  },
+  {
+    "label": "F1025",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "投资关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin03_3_7'"
+  },
+  {
+    "label": "F1025",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "投资关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin03_3_7'"
+  },
+  {
+    "label": "F1026",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "证券关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin05_3_7'"
+  },
+  {
+    "label": "F1026",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "证券关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin05_3_7'"
+  },
+  {
+    "label": "F1027",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "理财关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin06_3_7'"
+  },
+  {
+    "label": "F1027",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "理财关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin06_3_7'"
+  },
+  {
+    "label": "F1028",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "金融类关注度_7天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='7' and feature='fin07_3_7'"
+  },
+  {
+    "label": "F1028",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialActiveWeekProfile",
+    "description": "金融类关注度_7天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='7' and feature='fin07_3_7'"
+  },
+  {
+    "label": "F1029",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "保险slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin04_6_7'"
+  },
+  {
+    "label": "F1029",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "保险slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin04_6_7'"
+  },
+  {
+    "label": "F1030",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "借贷slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin01_6_7'"
+  },
+  {
+    "label": "F1030",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "借贷slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin01_6_7'"
+  },
+  {
+    "label": "F1031",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "银行slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin02_6_7'"
+  },
+  {
+    "label": "F1031",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "银行slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin02_6_7'"
+  },
+  {
+    "label": "F1032",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "投资slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin03_6_7'"
+  },
+  {
+    "label": "F1032",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "投资slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin03_6_7'"
+  },
+  {
+    "label": "F1033",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "证券slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin05_6_7'"
+  },
+  {
+    "label": "F1033",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "证券slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin05_6_7'"
+  },
+  {
+    "label": "F1034",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "理财slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin06_6_7'"
+  },
+  {
+    "label": "F1034",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "理财slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin06_6_7'"
+  },
+  {
+    "label": "F1035",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "金融类slope_7天",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='7' and feature='fin07_6_7'"
+  },
+  {
+    "label": "F1035",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "DeviceFinancialSlopeWeekProfile",
+    "description": "金融类slope_7天",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='7' and feature='fin07_6_7'"
+  },
+  {
+    "label": "F1036",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "理财App新安装量_30天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='30' and feature='fin06_0_30'"
+  },
+  {
+    "label": "F1036",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "理财App新安装量_30天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='30' and feature='fin06_0_30'"
+  },
+  {
+    "label": "F1037",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "借贷App新安装量_30天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='30' and feature='fin01_0_30'"
+  },
+  {
+    "label": "F1037",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "借贷App新安装量_30天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='30' and feature='fin01_0_30'"
+  },
+  {
+    "label": "F1038",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "信用卡App新安装量_30天",
+    "field": "feature",
+    "filter": "flag=0 and timewindow='30' and feature='505_0_30'"
+  },
+  {
+    "label": "F1038",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "信用卡App新安装量_30天",
+    "field": "cnt",
+    "filter": "flag=0 and timewindow='30' and feature='505_0_30'"
+  },
+  {
+    "label": "F1039",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "信用卡关注度_30天",
+    "field": "feature",
+    "filter": "flag=3 and timewindow='30' and feature='505_3_30'"
+  },
+  {
+    "label": "F1039",
+    "table": "rp_mobdi_app.timewindow_online_profile_v2",
+    "module": "TimewindowOnlineProfile",
+    "description": "信用卡关注度_30天",
+    "field": "cnt",
+    "filter": "flag=3 and timewindow='30' and feature='505_3_30'"
+  },
+  {
+    "label": "CA000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-菜系大类",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='category1'"
+  },
+  {
+    "label": "CA000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-菜系大类",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='category1'"
+  },
+  {
+    "label": "CB000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-菜系小类",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='category2'"
+  },
+  {
+    "label": "CB000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-菜系小类",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='category2'"
+  },
+  {
+    "label": "CC000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-餐饮价位",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='price'"
+  },
+  {
+    "label": "CC000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-餐饮价位",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='price'"
+  },
+  {
+    "label": "CD000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-餐饮品牌",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='brand'"
+  },
+  {
+    "label": "CD000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-餐饮品牌",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='brand'"
+  },
+  {
+    "label": "CE000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-口味偏好",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='taste'"
+  },
+  {
+    "label": "CE000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-口味偏好",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='taste'"
+  },
+  {
+    "label": "CF000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-堂食频次",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='total'"
+  },
+  {
+    "label": "CF000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-堂食频次",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='total'"
+  },
+  {
+    "label": "CG000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-堂食时段",
+    "field": "feature",
+    "filter": "flag=1 and timewindow='7' and feature='time'"
+  },
+  {
+    "label": "CG000",
+    "table": "rp_mobdi_app.timewindow_offline_profile_v2",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-堂食时段",
+    "field": "cnt",
+    "filter": "flag=1 and timewindow='7' and feature='time'"
+  },
+  {
+    "label": "CH000",
+    "table": "dm_sdk_mapping.app_category_mapping_par",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-外卖频次",
+    "field": "catering_takeout_cnt"
+  },
+  {
+    "label": "CI000",
+    "table": "dm_sdk_mapping.app_category_mapping_par",
+    "module": "CateringLbsLabelWeekly",
+    "description": "餐饮标签-外卖品牌",
+    "field": "catering_takeout_detail"
+  },
+  {
+    "label": "LA000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行大区",
+    "field": "travel_area"
+  },
+  {
+    "label": "LB000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行国家",
+    "field": "country"
+  },
+  {
+    "label": "LC000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行类型",
+    "field": "travel_app_act"
+  },
+  {
+    "label": "LC000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行类型",
+    "field": "car"
+  },
+  {
+    "label": "LC000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行类型",
+    "field": "business_flag"
+  },
+  {
+    "label": "LC000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行类型",
+    "field": "busi_app_act"
+  },
+  {
+    "label": "LD000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行时段",
+    "field": "vaca_flag",
+    "filter": "vaca_flag >= 1 and vaca_flag <= 4"
+  },
+  {
+    "label": "LE000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行时长",
+    "field": "day"
+  },
+  {
+    "label": "LF000",
+    "table": "rp_mobdi_app.app_active_weekly",
+    "module": "AppActiveWeekly",
+    "description": "旅游标签-出行预定渠道",
+    "field": "apppkg"
+  },
+  {
+    "label": "LG000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-大陆地区",
+    "field": "province_flag"
+  },
+  {
+    "label": "LH000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行省份",
+    "field": "province"
+  },
+  {
+    "label": "LI000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-出行城市",
+    "field": "city"
+  },
+  {
+    "label": "LJ000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-关注景点类型",
+    "field": "feature",
+    "filter": "flag=9 and timewindow='30' and feature='cate1'"
+  },
+  {
+    "label": "LJ000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-关注景点类型",
+    "field": "cnt",
+    "filter": "flag=9 and timewindow='30' and feature='cate1'"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "cheap_flight_installed"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "flight_active"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "country"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "pcountry"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "flight_installed"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "ticket_installed"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "ticket_active"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "rentcar_installed"
+  },
+  {
+    "label": "LK000",
+    "table": "dm_mobdi_master.travel_daily",
+    "module": "TravelDaily",
+    "description": "旅游标签-交通方式",
+    "field": "rentcar_active"
+  },
+  {
+    "label": "LL000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店类型偏好",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='hotel_style'"
+  },
+  {
+    "label": "LL000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店类型偏好",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='hotel_style'"
+  },
+  {
+    "label": "LM000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店每晚单价",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='price_level'"
+  },
+  {
+    "label": "LM000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店每晚单价",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='price_level'"
+  },
+  {
+    "label": "LN000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店品牌偏好",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='brand'"
+  },
+  {
+    "label": "LN000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店品牌偏好",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='brand'"
+  },
+  {
+    "label": "LO000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店评分偏好",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='score_type'"
+  },
+  {
+    "label": "LO000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店评分偏好",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='score_type'"
+  },
+  {
+    "label": "LP000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店位置偏好",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='location'"
+  },
+  {
+    "label": "LP000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店位置偏好",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='location'"
+  },
+  {
+    "label": "LQ000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店星级偏好",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='rank_star'"
+  },
+  {
+    "label": "LQ000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店星级偏好",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='rank_star'"
+  },
+  {
+    "label": "LR000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店增值需求",
+    "field": "feature",
+    "filter": "flag=6 and timewindow='30' and feature='facilities'"
+  },
+  {
+    "label": "LR000",
+    "table": "rp_mobdi_app.timewindow_offline_profile",
+    "module": "TimewindowOfflineProfile",
+    "description": "旅游标签-酒店增值需求",
+    "field": "cnt",
+    "filter": "flag=6 and timewindow='30' and feature='facilities'"
+  },
+  {
+    "label": "G10000",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-品类",
+    "field": "",
+    "subCode": [
+      "7019102",
+      "7019103",
+      "7019110",
+      "7019101",
+      "7019109",
+      "7019107",
+      "7019114",
+      "7019117",
+      "7019115",
+      "7019137",
+      "7019118",
+      "7019119",
+      "7019116",
+      "7019138",
+      "7019113",
+      "7019132",
+      "7019124",
+      "7019104",
+      "7019106",
+      "7019122",
+      "7019108",
+      "7019112",
+      "7019127",
+      "7019121",
+      "7019140",
+      "7019105",
+      "7019126",
+      "7019123",
+      "7019120",
+      "7019139",
+      "7019130",
+      "7019111",
+      "7019133",
+      "7019129",
+      "7019125",
+      "7019128",
+      "7019141",
+      "7019136",
+      "7019134",
+      "7019135"
+    ]
+  },
+  {
+    "label": "G20100",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-体育",
+    "field": "",
+    "subCode": [
+      "G20101",
+      "G20102",
+      "G20103",
+      "G20104",
+      "G20105",
+      "G20106",
+      "G20107",
+      "G20108",
+      "G20109",
+      "G20110",
+      "G20111",
+      "G20112",
+      "G20113",
+      "G20114",
+      "G20115",
+      "G20116",
+      "G20117",
+      "G20118",
+      "G20119",
+      "G20120",
+      "G20121",
+      "G20122",
+      "G20123",
+      "G20124",
+      "G20125",
+      "G20126",
+      "G20127",
+      "G20128",
+      "G20129"
+    ]
+  },
+  {
+    "label": "G20200",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-动漫",
+    "field": "",
+    "subCode": [
+      "G20201",
+      "G20202",
+      "G20203",
+      "G20204",
+      "G20205",
+      "G20206"
+    ]
+  },
+  {
+    "label": "G20300",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-棋牌",
+    "field": "",
+    "subCode": [
+      "G20301",
+      "G20302",
+      "G20303",
+      "G20304",
+      "G20305",
+      "G20306",
+      "G20307",
+      "G20308"
+    ]
+  },
+  {
+    "label": "G20400",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-音乐",
+    "field": "",
+    "subCode": [
+      "G20401",
+      "G20401",
+      "G20403",
+      "G20404",
+      "G20405"
+    ]
+  },
+  {
+    "label": "G20500",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-警匪",
+    "field": "",
+    "subCode": [
+      "G20501",
+      "G20502"
+    ]
+  },
+  {
+    "label": "G20600",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-冒险",
+    "field": "",
+    "subCode": [
+      "G20601",
+      "G20602",
+      "G20603",
+      "G20604",
+      "G20605",
+      "G20606"
+    ]
+  },
+  {
+    "label": "G20700",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-生活娱乐",
+    "field": "",
+    "subCode": [
+      "G20701",
+      "G20702",
+      "G20703",
+      "G20704",
+      "G20705",
+      "G20706",
+      "G20707",
+      "G20708",
+      "G20709",
+      "G20710",
+      "G20711",
+      "G20712",
+      "G20713",
+      "G20714",
+      "G20715",
+      "G20716",
+      "G20717",
+      "G20718",
+      "G20719"
+    ]
+  },
+  {
+    "label": "G20800",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-历史",
+    "field": "",
+    "subCode": [
+      "G20801",
+      "G20802",
+      "G20803",
+      "G20804",
+      "G20805"
+    ]
+  },
+  {
+    "label": "G20900",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-神话",
+    "field": "",
+    "subCode": [
+      "G20901",
+      "G20902"
+    ]
+  },
+  {
+    "label": "G21000",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-科幻",
+    "field": "",
+    "subCode": [
+      "G21001",
+      "G21002",
+      "G21003",
+      "G21004",
+      "G21005"
+    ]
+  },
+  {
+    "label": "G21100",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-魔幻",
+    "field": "",
+    "subCode": [
+      "G21101",
+      "G21102"
+    ]
+  },
+  {
+    "label": "G21200",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-玄幻",
+    "field": "",
+    "subCode": [
+      "G21201",
+      "G21202"
+    ]
+  },
+  {
+    "label": "G21300",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-武侠",
+    "field": "",
+    "subCode": [
+      "G21300"
+    ]
+  },
+  {
+    "label": "G21400",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-游戏改编",
+    "field": "",
+    "subCode": [
+      "G21401",
+      "G21402",
+      "G21403",
+      "G21404",
+      "G21405",
+      "G21406",
+      "G21407",
+      "G21408",
+      "G21409"
+    ]
+  },
+  {
+    "label": "G21500",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-军事战争",
+    "field": "",
+    "subCode": [
+      "G21501",
+      "G21502",
+      "G21503",
+      "G21504",
+      "G21505",
+      "G21506"
+    ]
+  },
+  {
+    "label": "G21600",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-影视",
+    "field": "",
+    "subCode": [
+      "G21601",
+      "G21602",
+      "G21603",
+      "G21604"
+    ]
+  },
+  {
+    "label": "G21700",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-体裁大类-其他",
+    "field": "",
+    "subCode": [
+      "G21701",
+      "G21702",
+      "G21703",
+      "G21704",
+      "G21705",
+      "G21706",
+      "G21707",
+      "G21708"
+    ]
+  },
+  {
+    "label": "G30000",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-画风",
+    "field": "",
+    "subCode": [
+      "G30001",
+      "G30002",
+      "G30003",
+      "G30004",
+      "G30005",
+      "G30006",
+      "G30007",
+      "G30008",
+      "G30009",
+      "G30010",
+      "G30011"
+    ]
+  },
+  {
+    "label": "G40000",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-IP分类",
+    "field": "",
+    "subCode": [
+      "G40001",
+      "G40002",
+      "G40003",
+      "G40004",
+      "G40005",
+      "G40006",
+      "G40007",
+      "G40008",
+      "G40009",
+      "G40010",
+      "G40011",
+      "G40012"
+    ]
+  },
+  {
+    "label": "G50000",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-联网情况",
+    "field": "",
+    "subCode": [
+      "G50001",
+      "G50002"
+    ]
+  },
+  {
+    "label": "G60000",
+    "table": "rp_mobdi_app.timewindow_online_profile",
+    "module": "TimewindowOnlineGameProfile",
+    "description": "游戏画像-画风",
+    "field": "",
+    "subCode": [
+      "G60001",
+      "G60002"
+    ]
+  }
+]

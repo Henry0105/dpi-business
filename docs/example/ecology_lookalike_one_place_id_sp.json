@@ -1,0 +1,29 @@
+{
+  "job_id": "mobeyeEcology_lookalike_20180305_f95cbe240e4b4a3b881ec51d5529a955",
+  "job_name": "ecology_lookalike_one_place_id_sp",
+  "description": "根据种子用户，跟自有数据做匹配，展示种子用户的属性",
+  "param": [
+    {
+      "o2o_id": {
+        "value": "f95cbe240e4b4a3b881ec51d5529a955",
+        "description": ""
+      },
+      "day": {
+        "value": "20180305",
+        "description": ""
+      },
+      "data_url": {
+        "value": "http://10.21.131.11:20101/fs/download?module=dataengine&path=dataengine/jimas/oneplaceid",
+        "description": ""
+      },
+      "device_type": {
+        "value": 1,
+        "description": "1：imei、2：mac、3：phone、4：device"
+      },
+      "encrypt_type": {
+        "value": 0,
+        "description": "0不加密，1加密(entryMD5_32)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "job_id": "profile_cal_1",
+  "job_name": "profile_cal_score",
+  "description": "画像计算时的入参",
+  "param": [
+    {
+      "input":{
+        "uuid": {
+          "value": "123123",
+          "description": "任务标志位"
+        },
+        "day":"20180809"
+      },
+      "output":{
+        "value": "tmp/123123_score.tar.gz",
+        "module":"demo",
+        "description": "输出类型以及值"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,42 @@
+{
+  "job_id": "crowd_filter_1",
+  "job_name": "crowd_filter",
+  "description": "人群包二次删选,字段详情见http://c.mob.com/pages/viewpage.action?pageId=5668766",
+  "param": [
+    {
+      "input": {
+        "value": "http://10.21.131.11:20101/fs/download?module=dataengine&path=dataengine/demo/device_crowd_secondary_filter.tar.gz",
+        "compress_type":"tgz",
+        "description": "device文件目录,压缩格式(none|tgz)"
+      },
+      "output": {
+        "value": "tmp/98765345678.tar.gz",
+        "output_type": "dfs",
+        "module":"demo",
+        "description": "dfs目标文件名称"
+      },
+      "cell_factory": [
+        {
+          "value": "HUAWEI,VIVO",
+          "opt": "in",
+          "description": "手机型号"
+        }
+      ],
+      "tag_list": [
+        {
+          "value": "A0E,A0G,A08",
+          "opt": "in",
+          "description": "应用标签类型"
+        },
+        {
+          "value": "B1Q,B0N",
+          "opt": "notin",
+          "description": "应用标签类型"
+        }
+      ]
+    }
+  ]
+}
+
+
+

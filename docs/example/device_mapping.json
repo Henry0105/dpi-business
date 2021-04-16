@@ -1,0 +1,51 @@
+{
+  "job_id": "000003",
+  "job_name": "device_mapping",
+  "description": "清洗表设备导出,",
+  "param": [
+    {
+      "input": {
+        "compress_type": "tgz",
+        "value": "http://10.21.131.11:20101/fs/download?module=dataengine&path=dataengine/demo/device_crowd_secondary_filter.tar.gz",
+        "description": "dfs文件源(device),压缩格式(none|tgz)"
+      },
+      "output": {
+        "value": "tmp/000003_device_01",
+        "description": "目标文件名称"
+      },
+      "device_mapping_types": {
+        "value": [
+          1,
+          2,
+          3
+        ],
+        "description": "1：imei、2：mac、3：phone"
+      },
+      "encrypt_type": {
+        "value": 0,
+        "description": "0不加密，1加密(entryMD5_32)"
+      }
+    },
+    {
+      "input": {
+        "input_type": "uuid",
+        "value": "20180601_jimas_5b10bc397fbff7f73bd7befe",
+        "description": "缓存的device"
+      },
+      "output": {
+        "value": "tmp/000003_device_02",
+        "description": "目标文件名称"
+      },
+      "device_mapping_types": {
+        "value": [
+          1
+        ],
+        "description": "1：imei、2：mac、3：phone"
+      },
+      "encrypt_type": {
+        "value": 0,
+        "description": "0不加密，1加密(entryMD5_32)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "job_id": "0425add81ce3a9def",
+  "job_name": "cleaned_device_mapping_export",
+  "description": "清洗表设备导出",
+  "param": [
+    {
+      "day": {
+        "value": "20180423",
+        "description": ""
+      },
+      "user_id": {
+        "value": "jimas",
+        "description": ""
+      },
+      "o2o_id": {
+        "value": "jimasdataengine_oneplaceid_20180423_5add81ce3a9def6f5d293db6",
+        "description": ""
+      },
+      "target_name": {
+        "value": "20180423_jimas_jimasdataengine_oneplaceid_20180423_5add81ce3a9def6f5d293db6_device",
+        "description": "dfs目标文件名称"
+      },
+      "device_mapping_types": {
+        "value": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "description": "1：imei、2：mac、3：phone、4：device"
+      },
+      "encrypt_type": {
+        "value": 0,
+        "description": "0不加密，1加密(entryMD5_32)"
+      }
+    }
+  ]
+}

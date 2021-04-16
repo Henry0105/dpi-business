@@ -1,0 +1,45 @@
+{
+  "job_id": "lookalike_1",
+  "job_name": "lookalike_normal",
+  "description": "根据种子用户，找到跟种子用户相似的设备",
+  "param": [
+    {
+      "input": {
+        "compress_type": "tgz",
+        "value": "http://10.21.131.11:20101/fs/download?path=demo/sample3.tar.gz&module=demo",
+        "description": "dfs文件源(device),压缩格式(none|tgz)",
+        "id_type": {
+          "value": 4,
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        }
+      },
+      "output": {
+        "value": "it_is_uuid1",
+        "output_type": "uuid",
+        "description": "uuid=> 作为唯一标识,会根据uuid持久化到hive中; dfs=>uuid默认是md5(value),并打包后上传到dfs",
+        "limit": 5000
+      }
+    },
+    {
+      "input": {
+        "input_type": "uuid",
+        "value": "11328a45f49e6c545b715a1ad2831af0",
+        "description": "缓存的device",
+        "id_type": {
+          "value": 4,
+          "description": "1：imei, 2：mac, 3：phone, 4:device, 5:imei_14"
+        },
+        "encrypt_type": {
+          "value": 0,
+          "description": "0不加密，1加密(entryMD5_32)"
+        }
+      },
+      "output": {
+        "value": "it_is_uuid2",
+        "output_type": "uuid",
+        "description": "uuid=> 作为唯一标识,会根据uuid持久化到hive中; dfs=>uuid默认是md5(value),并打包后上传到dfs",
+        "limit": 5000
+      }
+    }
+  ]
+}

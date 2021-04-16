@@ -1,0 +1,31 @@
+{
+  "job_id": "crowd_portrait_estimation_20180723001",
+  "job_name": "crowd_portrait_estimation",
+  "description": "自定义群体画像推算",
+  "rpc_host": "",
+  "rpc_port": 0,
+  "day": "20190515",
+  "params": [
+    {
+      "inputs": [
+        {
+          "uuid": "d86e610a1f856ce3303e8ad7b7e54d9b",
+          "id_type": 4,
+          "description": "dfs文件源(device),压缩格式(none|tgz)",
+          "tagList": [
+              "CP001",
+              "CP002"
+          ]
+        }
+      ],
+      "output": {
+        "value": "tmp/crowd_portrait_estimation_20180723001",
+        "uuid": "C1328a45f49e6c545b715a1ad2831af1",
+        "module": "demo",
+        "description": "目标文件名称",
+        "hdfs_output": ""
+      }
+    }
+  ]
+}
+

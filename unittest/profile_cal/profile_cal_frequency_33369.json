@@ -1,0 +1,21 @@
+{
+  "job_id":"data-engine-toolplat304622800546828288_1_20190619142300",
+  "job_name":"profile_cal_frequency",
+  "param":[
+    {
+      "input":{
+        "compress_type":"tgz",
+        "input_type":"dfs",
+        "value":"http://10.21.131.11:20101/fs/download?module=date-engine-toolplat&path=toolplat/dev/62e0acbb0c4e4516be45d38cdc89e4ec_device8w.tar.gz"
+      },
+      "output":{
+        "limit":300,
+        "module":"date-engine-toolplat",
+        "uuid":{
+          "value":"20190619142300_6df59d417a9641f1b2d1ba8655432f50"
+        },
+        "value":"toolplat/dev/51a2c56756af4fdf890dad8b2ad5cfa4.tar.gz"
+      }
+    }
+  ]
+}

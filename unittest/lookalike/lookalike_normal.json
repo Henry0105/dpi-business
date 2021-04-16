@@ -1,0 +1,31 @@
+{
+  "rpcHost": "", 
+  "jobName": "lookalike_normal", 
+  "rpcPort": 51885, 
+  "params": [
+    {
+      "output": {
+        "uuid": "uuid_value"
+      }, 
+      "inputs": [
+        {
+          "idType": 4, 
+          "uuid": "1052c9e8b956e41d42e94469732580b2"
+        }
+      ]
+    }, 
+    {
+      "output": {
+        "uuid": "uuid_value"
+      }, 
+      "inputs": [
+        {
+          "idType": 4, 
+          "uuid": "11328a45f49e6c545b715a1ad2831af0"
+        }
+      ]
+    }
+  ], 
+  "jobId": "lookalike_normal", 
+  "day": "20190509"
+}
