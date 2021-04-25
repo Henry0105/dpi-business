@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.mob</groupId>
         <artifactId>dpi-business</artifactId>
-        <version>v2.1</version>
+        <version>v1.1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
