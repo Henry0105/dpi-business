@@ -6,7 +6,7 @@ import com.mob.dataengine.engine.core.business.dpi.DpiMktUrl.query
 import com.mob.dataengine.engine.core.business.dpi.been.{DPIParam, UrlStruct}
 import com.mob.dataengine.engine.core.jobsparam.JobContext2
 import org.apache.commons.lang3.StringUtils
-import org.apache.spark.sql.Row
+import org.apache.spark.sql.{Row, SparkSession}
 
 case class GenTagHandler() extends Handler {
 
@@ -19,9 +19,21 @@ case class GenTagHandler() extends Handler {
     import ctx.param
     ctx.spark.udf.register("set_equals", arrayEquals _)
     ctx.spark.conf.set("spark.sql.crossJoin.enabled", "true")
+
+    // 中柱模式
+    val mode1List = param.carrierInfos
+      .withFilter(info => param.carriers.contains(info.name) && info.genType == 0).map(_.name).sorted
+
+    // 浩智模式
+    val mode2List = param.carrierInfos
+      .withFilter(info => param.carriers.contains(info.name) && info.genType == 1).map(_.name).sorted
+
+
+    // 模式一
+
     // 生成tag的动作
     param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
-      .withFilter(info => param.carriers.contains(info.name)).foreach {
+      .withFilter(info => mode1List.contains(info.name)).foreach {
       info =>
         println(info.name)
         // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
@@ -33,9 +45,66 @@ case class GenTagHandler() extends Handler {
         // 提示功能:url是否已经存在
         reportUrlRepetition(ctx, info.name)
     }
+
+
+    // 模式二
+
+    // 生成tag的动作
+    val head = mode2List.head
+    val tail = mode2List.tail
+    param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
+      .withFilter(info => Set(head).contains(info.name)).foreach {
+      info =>
+        println(info.name)
+        // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
+        query(ctx, info.genTagSql, Some(Map("version" -> param.version, "carrier" -> info.name,
+          param.srcTable -> "dpi_tb3",
+          s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG,
+          s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
+        )))
+        // 提示功能:url是否已经存在
+        reportUrlRepetition(ctx, info.name)
+    }
+
+    if (tail.nonEmpty) {
+      // 生成tag的动作
+      param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
+        .withFilter(info => tail.contains(info.name)).foreach {
+        info =>
+          println(info.name)
+          // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
+          query(ctx,
+            s"""
+               |insert overwrite table ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
+               |partition(version='${param.version}' and carrier='${info.name}')
+               |select
+               |${fieldNamesNoPart(ctx.spark, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG, 2)}
+               |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
+               |where version='${param.version}' and carrier='${head}';
+               |insert overwrite table ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
+               |partition(version='${param.version}' and carrier='${info.name}')
+               |select
+               |${fieldNamesNoPart(ctx.spark, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG, 2)}
+               |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
+               |where version='${param.version}' and carrier='${head}';
+               |""".stripMargin, None)
+          // 提示功能:url是否已经存在
+          reportUrlRepetition(ctx, info.name)
+      }
+    }
+
     // 解锁
     param.jdbcTools.executeUpdateWithoutCheck(
       s"UPDATE dpi_job_lock SET locked=0,update_time='${DateUtils.getNowTT()}' WHERE version='${ctx.param.version}'")
+  }
+
+
+  def fieldNamesNoPart(spark: SparkSession, table: String, numPart: Int): String = {
+    val schema = spark.table(PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG).schema
+    (0 until numPart).foreach(i => {
+      schema.init
+    })
+    schema.map(_.name).mkString(",")
   }
 
   /**

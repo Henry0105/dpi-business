@@ -49,12 +49,12 @@ class DPIParam(inputs: Seq[DPIInput], output: DPIOutput) extends BaseParam2(inpu
 
 }
 
-case class CarrierInfo(id: Int, name: String, genTagSql: String, preScreenSql: String, mpSql: String) {
+case class CarrierInfo(id: Int, name: String, genTagSql: String, preScreenSql: String, mpSql: String, genType: Int) {
 
   override def toString: String = {
     s"""
        |$id-$name =>
-       |> genTagSql:$genTagSql
+       |> genTagSql[${genType}]:$genTagSql
        |> preScreenSql:$preScreenSql
        |> mpSql:$mpSql
        |""".stripMargin
