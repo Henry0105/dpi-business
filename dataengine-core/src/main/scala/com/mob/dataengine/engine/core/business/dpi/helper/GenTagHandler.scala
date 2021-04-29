@@ -50,49 +50,51 @@ case class GenTagHandler() extends Handler {
     // 模式二
 
     // 生成tag的动作
-    val head = mode2List.head
-    val tail = mode2List.tail
-    param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
-      .withFilter(info => Set(head).contains(info.name)).foreach {
-      info =>
-        println(info.name)
-        // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
-        query(ctx, info.genTagSql, Some(Map("version" -> param.version, "carrier" -> info.name,
-          param.srcTable -> "dpi_tb3",
-          s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG,
-          s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
-        )))
-        // 提示功能:url是否已经存在
-        reportUrlRepetition(ctx, info.name)
-    }
+    if  (mode2List.nonEmpty) {
 
-    if (tail.nonEmpty) {
-      // 生成tag的动作
+      val head = mode2List.head
+      val tail = mode2List.tail
       param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
-        .withFilter(info => tail.contains(info.name)).foreach {
+        .withFilter(info => Set(head).contains(info.name)).foreach {
         info =>
           println(info.name)
           // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
-          query(ctx,
-            s"""
-               |insert overwrite table ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
-               |partition(version='${param.version}' and carrier='${info.name}')
-               |select
-               |${fieldNamesNoPart(ctx.spark, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG, 2)}
-               |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
-               |where version='${param.version}' and carrier='${head}';
-               |insert overwrite table ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
-               |partition(version='${param.version}' and carrier='${info.name}')
-               |select
-               |${fieldNamesNoPart(ctx.spark, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG, 2)}
-               |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
-               |where version='${param.version}' and carrier='${head}';
-               |""".stripMargin, None)
+          query(ctx, info.genTagSql, Some(Map("version" -> param.version, "carrier" -> info.name,
+            param.srcTable -> "dpi_tb3",
+            s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG,
+            s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
+          )))
           // 提示功能:url是否已经存在
           reportUrlRepetition(ctx, info.name)
       }
-    }
 
+      if (tail.nonEmpty) {
+        // 生成tag的动作
+        param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
+          .withFilter(info => tail.contains(info.name)).foreach {
+          info =>
+            println(info.name)
+            // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
+            query(ctx,
+              s"""
+                 |insert overwrite table ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
+                 |partition(version='${param.version}' and carrier='${info.name}')
+                 |select
+                 |${fieldNamesNoPart(ctx.spark, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG, 2)}
+                 |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
+                 |where version='${param.version}' and carrier='${head}';
+                 |insert overwrite table ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
+                 |partition(version='${param.version}' and carrier='${info.name}')
+                 |select
+                 |${fieldNamesNoPart(ctx.spark, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG, 2)}
+                 |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
+                 |where version='${param.version}' and carrier='${head}';
+                 |""".stripMargin, None)
+            // 提示功能:url是否已经存在
+            reportUrlRepetition(ctx, info.name)
+        }
+      }
+    }
     // 解锁
     param.jdbcTools.executeUpdateWithoutCheck(
       s"UPDATE dpi_job_lock SET locked=0,update_time='${DateUtils.getNowTT()}' WHERE version='${ctx.param.version}'")
