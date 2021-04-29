@@ -39,7 +39,7 @@ object DpiMktUrl extends BaseJob2[DPIParam] {
       val genTagSql = r.getAs[String]("gen_tag")
       val preScreenSql = r.getAs[String]("pre_screen")
       val mpSql = r.getAs[String]("mp")
-      val genType = r.getAs[Int]("genType")
+      val genType = r.getAs[Int]("gen_type")
 
       CarrierInfo(id, name, genTagSql, preScreenSql, mpSql, genType)
     }
