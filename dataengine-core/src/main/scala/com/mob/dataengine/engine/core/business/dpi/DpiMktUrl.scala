@@ -17,7 +17,7 @@ object DpiMktUrl extends BaseJob2[DPIParam] {
     chain.addHandler(InputHandler())
     chain.addHandler(CleanDataAndParseURLHandler())
     chain.addHandler(AssumeUniqueHandler())
-    chain.addHandler(GenTagHandler())
+    chain.addHandler(GenTagV3Handler())
     chain.addHandler(DeclineHandler())
     chain.addHandler(PersistHandler())
     chain.execute(ctx)
@@ -60,6 +60,16 @@ object DpiMktUrl extends BaseJob2[DPIParam] {
     }
     val queries = BusinessScriptUtils.getQueries(query)
     queries.foreach(ctx.sql)
+  }
+
+  def query2DF(ctx: JobContext2[DPIParam], rawQuery: String, replaces: Option[Map[String, String]]): Seq[DataFrame] = {
+    val query = if (replaces.isDefined) {
+      replaces.get.foldLeft(rawQuery) { (context, kv) => context.replaceAll(s"\\$$${kv._1}", kv._2) }
+    } else {
+      rawQuery
+    }
+    val queries = BusinessScriptUtils.getQueries(query)
+    queries.map(ctx.sql)
   }
 
   override def cacheInput: Boolean = true

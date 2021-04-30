@@ -12,6 +12,7 @@ case class PersistHandler() extends Handler {
   }
 
   def persist2Hive(ctx: JobContext2[DPIParam]): Unit = {
+
     ctx.param.business.foreach(_.map { business =>
       ctx.sql(
         s"""
@@ -20,6 +21,12 @@ case class PersistHandler() extends Handler {
            |       source_type, os, cate_l1, period, url_action, describe_1, describe_2, id, date
            |       , '${BusinessEnum.getChineseName(business)}' plat
            |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
+           |WHERE version = '${ctx.param.version}'
+           |union all
+           |SELECT tag, url, url_regexp, protocal_type, root_domain, host, file, path, query0, url_key,
+           |       source_type, os, cate_l1, period, url_action, describe_1, describe_2, id, date
+           |       , '${BusinessEnum.getChineseName(business)}' plat
+           |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ}
            |WHERE version = '${ctx.param.version}'
            |""".stripMargin)
     })

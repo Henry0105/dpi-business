@@ -20,18 +20,32 @@ case class DeclineHandler() extends Handler {
     param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.preScreenSql))
       .withFilter(info => param.carriers.contains(info.name)).foreach {
       info =>
+
+        val _srcTable = if (info.genType == 1) {
+          PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ
+        } else {
+          PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
+        }
+
         query(ctx, info.preScreenSql,
           Some(Map("carrier" -> info.name, "version" -> param.version,
-            param.srcTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG,
+            param.srcTable -> _srcTable,
             param.targetTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_PRE_SCREEN)))
     }
 
     param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.mpSql))
       .withFilter(info => param.carriers.contains(info.name)).foreach {
       info =>
+
+        val _srcTable = if (info.genType == 1) {
+          PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ
+        } else {
+          PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
+        }
+
         query(ctx, info.mpSql,
           Some(Map("carrier" -> info.name, "version" -> param.version,
-            param.srcTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG,
+            param.srcTable -> _srcTable,
             param.targetTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_MP)))
         persist2Mysql(ctx, info.id, info.name)
     }

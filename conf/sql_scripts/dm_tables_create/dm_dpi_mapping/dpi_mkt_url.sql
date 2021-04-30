@@ -36,6 +36,22 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag`
         `version` string COMMENT 'day')
     stored as orc;
 
+CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag_hz`
+(
+    `tag`           string COMMENT 'tag_id',
+    `url`           string COMMENT 'url',
+    `url_regexp`    string COMMENT '清洗url',
+    `protocal_type` string COMMENT '协议',
+    `root_domain`   string COMMENT 'root',
+    `host`          string COMMENT 'host',
+    `file`          string COMMENT 'file',
+    `path`          string COMMENT 'path',
+    `query0`        string COMMENT 'query0',
+    `url_key`       string COMMENT 'url_key'
+)
+    PARTITIONED BY (
+        `version` string COMMENT '版本记录')
+    stored as orc;
 
 CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag_init`
 (
@@ -75,6 +91,32 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_withtag`
         `version` string COMMENT '版本记录')
     stored as orc;
 
+CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_withtag_hz`
+(
+    `tag`           string COMMENT 'tag_id',
+    `url`           string COMMENT '原始url',
+    `url_regexp`    string COMMENT '清洗后URL',
+    `protocal_type` string COMMENT '协议',
+    `root_domain`   string COMMENT 'root',
+    `host`          string COMMENT 'host',
+    `file`          string COMMENT 'file',
+    `path`          string COMMENT 'path',
+    `query0`        string COMMENT 'query0',
+    `url_key`       string COMMENT 'url_key',
+    `plat`          string COMMENT '业务线',
+    `source_type`   string COMMENT '来源',
+    `os`            string COMMENT 'iOS/Anorid',
+    `cate_l1`       string COMMENT '业务类型',
+    `period`        string COMMENT '业务周期',
+    `url_action`    string COMMENT 'url行为',
+    `describe_1`    string COMMENT '描述1',
+    `describe_2`    string COMMENT '描述2',
+    `id`            string COMMENT '分组id',
+    `date`          string COMMENT '提交日期'
+)
+    PARTITIONED BY (
+        `version` string COMMENT '版本记录')
+    stored as orc;
 
 CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_first_filter`
 (

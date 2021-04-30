@@ -428,7 +428,9 @@ object PropUtils {
   // DPI表
   lazy val HIVE_TABLE_RP_DPI_MKT_URL_INPUT: String = getProperty("hive_table_rp_dpi_mkt_url_input")
   lazy val HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG: String = getProperty("hive_table_rp_dpi_mkt_url_withtag")
+  lazy val HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ: String = getProperty("hive_table_rp_dpi_mkt_url_withtag_hz")
   lazy val HIVE_TABLE_RP_DPI_MKT_URL_TAG: String = getProperty("hive_table_rp_dpi_mkt_url_tag")
+  lazy val HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ: String = getProperty("hive_table_rp_dpi_mkt_url_tag_hz")
   lazy val HIVE_TABLE_RP_DPI_MKT_URL_MP: String = getProperty("hive_table_rp_dpi_mkt_url_mp")
   lazy val HIVE_TABLE_RP_DPI_MKT_URL_PRE_SCREEN: String = getProperty("hive_table_rp_dpi_mkt_url_pre_screen")
 
