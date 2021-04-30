@@ -50,17 +50,20 @@ case class GenTagV3Handler() extends Handler {
       val tail = mode2List.tail
 
       // 获取最新分区
-      val _version = ctx.spark.sql(s"show partitions ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ}")
-        .collect().map(_.getAs[String](0).split("=")(1)).sorted.last
-
-      val maxTag = query2DF(ctx,
-        """
-          |select max(tag) as tag
-          |from $src_table
-          |where version = '$version'
-          |""".stripMargin, Some(Map("version" -> _version,
-          param.srcTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ
-        ))).head.collect().map(_.getAs[String](0).trim).last
+      val rows = ctx.spark.sql(s"show partitions ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ}")
+        .collect()
+      val maxTag = if (rows.nonEmpty) {
+        query2DF(ctx,
+          """
+            |select max(tag) as tag
+            |from $src_table
+            |where version = '$version'
+            |""".stripMargin, Some(Map("version" -> rows.map(_.getAs[String](0).split("=")(1)).sorted.last,
+            param.srcTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ
+          ))).head.collect().map(_.getAs[String](0).trim).last
+      } else {
+        ""
+      }
 
       param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.genTagSql))
         .withFilter(info => Set(head).contains(info.name)).foreach {
