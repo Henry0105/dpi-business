@@ -55,6 +55,17 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
       tableName = PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG)
     createTable(urlWithtagDF)
 
+    // gen_tag
+    val urlTagHzDF = FileUtils.getSqlScript("conf/sql_scripts/dm_tables_create/dm_dpi_mapping/" +
+      "dpi_mkt_url.sql",
+      tableName = PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ)
+    createTable(urlTagHzDF)
+
+    val urlWithtagHzDF = FileUtils.getSqlScript("conf/sql_scripts/dm_tables_create/dm_dpi_mapping/" +
+      "dpi_mkt_url.sql",
+      tableName = PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ)
+    createTable(urlWithtagHzDF)
+
     // pre_screen
     val preScreenDF = FileUtils.getSqlScript("conf/sql_scripts/dm_tables_create/dm_dpi_mapping/" +
       "dpi_mkt_url.sql",
@@ -111,6 +122,8 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
 
     val A9 = ("'A'," * 9).init
     val B9 = ("'B'," * 9).init
+    val C9 = ("'C'," * 9).init
+    val D9 = ("'D'," * 9).init
     sql(
       s"""
          |INSERT INTO TABLE ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
@@ -122,6 +135,19 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
          |INSERT INTO TABLE ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
          |PARTITION(carrier = 'unicom', version = 'v2')
          |VALUES ("801", $B9)
+         |""".stripMargin)
+    sql(
+      s"""
+         |INSERT INTO TABLE ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ}
+         |PARTITION(version = 'v1')
+         |VALUES ("802", $C9)
+         |""".stripMargin)
+
+    sql(
+      s"""
+         |INSERT INTO TABLE ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ}
+         |PARTITION(version = 'v2')
+         |VALUES ("803", $D9)
          |""".stripMargin)
 
   }
@@ -150,7 +176,7 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
          |          "sep" : ",",
          |          "uuid": "$version",
          |          "url":"src/test/resources/business/dpi/1123_game_zj.csv",
-         |          "carrier": ["unicom"],
+         |          "carriers": ["unicom","henan_mobile","shandong_mobile","hebei_mobile","anhui_mobile","jiangsu_mobile","tianjin_mobile","zhejiang_mobile","telecom"],
          |          "business": [1, 2]
          |       }]
          |    }
@@ -171,9 +197,10 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
       DpiMktUrl.run(DpiMktUrl.jobContext)
     }
 
-
     println("结果数据测试 ==>")
     spark.table(PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG)
+      .filter($"version" === s"$version").show(false)
+    spark.table(PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ)
       .filter($"version" === s"$version").show(false)
     spark.table(PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_PRE_SCREEN)
       .where($"version" === s"$version").show(false)

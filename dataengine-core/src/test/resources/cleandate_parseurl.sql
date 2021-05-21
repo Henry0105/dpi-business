@@ -14,7 +14,7 @@ SELECT plat,
        date
 FROM (
       SELECT trim(plat)          as plat,
-             regexp_replace(trim(url),'\"|\\\\*$','') as url,
+             regexp_replace(trim(url),'\"|\\*$','') as url,
              trim(url_key)       as url_key,
              trim(source_type)   as source_type,
              trim(os)            as os,
@@ -33,10 +33,10 @@ FROM (
 CREATE OR REPLACE TEMPORARY VIEW dpi_tb2 as
 SELECT url,
        protocal_type,
-       regexp_replace(host,'^\\\\*|^\\\\.|\\\\*$|\\\\.$','') as host,
-       regexp_replace(file,'^\\\\/\\\\*','/') as file,
-       regexp_replace(path,'^\\\\/\\\\*','/') as path,
-       regexp_replace(query0,'^\\\\*|\\\\*$','') as query0,
+       regexp_replace(host,'^\\*|^\\.|\\*$|\\.$','') as host,
+       regexp_replace(file,'^\\/\\*','/') as file,
+       regexp_replace(path,'^\\/\\*','/') as path,
+       regexp_replace(query0,'^\\*|\\*$','') as query0,
        url_key,
        plat,
        source_type,
@@ -103,12 +103,12 @@ FROM (
              path,
              query0,
              url_key,
-             reverse(split(reverse(host),'\\\\.')[0]) as host_rev_0,
-             concat_ws('.',reverse(split(reverse(host),'\\\\.')[0]),reverse(split(reverse(host),'\\\\.')[1])) as host_rev_1,
-             concat_ws('.',reverse(split(reverse(host),'\\\\.')[1]),reverse(split(reverse(host),'\\\\.')[0])) as root_domain_1,
+             reverse(split(reverse(host),'\\.')[0]) as host_rev_0,
+             concat_ws('.',reverse(split(reverse(host),'\\.')[0]),reverse(split(reverse(host),'\\.')[1])) as host_rev_1,
+             concat_ws('.',reverse(split(reverse(host),'\\.')[1]),reverse(split(reverse(host),'\\.')[0])) as root_domain_1,
              case
-                 when size(split(reverse(host),'\\\\.'))>2
-                 then concat_ws('.',reverse(split(reverse(host),'\\\\.')[2]),reverse(split(reverse(host),'\\\\.')[1]),reverse(split(reverse(host),'\\\\.')[0]))
+                 when size(split(reverse(host),'\\.'))>2
+                 then concat_ws('.',reverse(split(reverse(host),'\\.')[2]),reverse(split(reverse(host),'\\.')[1]),reverse(split(reverse(host),'\\.')[0]))
                  else ''
              end as root_domain_2,
              source_type,
@@ -123,6 +123,6 @@ FROM (
       FROM dpi_tb2
      ) s
 LEFT JOIN dm_dpi_mapping_test.dim_dpi_domain t1
-ON host_rev_0 = t1.level_domain
+ON host_rev_0 = t1.domain
 LEFT JOIN dm_dpi_mapping_test.dim_dpi_domain t2
-ON host_rev_1 = t2.level_domain
+ON host_rev_1 = t2.domain

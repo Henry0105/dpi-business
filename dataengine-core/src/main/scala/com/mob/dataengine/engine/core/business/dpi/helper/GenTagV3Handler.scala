@@ -20,6 +20,7 @@ case class GenTagV3Handler() extends Handler {
     import ctx.param
     ctx.spark.udf.register("set_equals", arrayEquals _)
     ctx.spark.conf.set("spark.sql.crossJoin.enabled", "true")
+    ctx.param.tagInfoDF.select("tag", "gen_type").dropDuplicates().createOrReplaceTempView("business_online_tag_info")
 
     // 中柱模式
     val mode1List = param.carrierInfos
@@ -33,9 +34,11 @@ case class GenTagV3Handler() extends Handler {
         // PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_V2
         query(ctx, info.genTagSql, Some(Map("version" -> param.version, "carrier" -> info.name,
           param.srcTable -> "dpi_tb3",
-          s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG,
-          s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
+          s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG
         )))
+
+        // 提示功能:url是否已经存在
+        reportUrlRepetition(ctx, info.name, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG, info.genType)
     }
 
 
@@ -76,6 +79,8 @@ case class GenTagV3Handler() extends Handler {
             s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ,
             s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ
           )))
+
+          reportUrlRepetition(ctx, info.name, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ, info.genType)
       }
 
       if (tail.nonEmpty) {
@@ -129,22 +134,24 @@ case class GenTagV3Handler() extends Handler {
   }
 
   /** 判断url是否重复，如果重复，将具体的tag写入回调信息 */
-  def reportUrlRepetition(ctx: JobContext2[DPIParam], carrier: String): Unit = {
+  def reportUrlRepetition(ctx: JobContext2[DPIParam], carrier: String, table: String, genType: Int): Unit = {
     val df = ctx.sql(
       s"""
          |select tag, collect_set(struct(tag, url, url_regexp, url_key)) as new_url_set
-         |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
-         |where carrier = '$carrier' and version = '${ctx.param.version}'
+         |from ${table}
+         |where version = '${ctx.param.version}' ${ if (genType == 1) {""} else { s" and carrier = '$carrier'" } }
          |group by tag
          |""".stripMargin).cache()
     df.createOrReplaceTempView("rur_1")
 
     ctx.sql(
       s"""
-         |select tag, collect_set(struct(tag, url, url_regexp, url_key)) as old_url_set
-         |from ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG}
-         |where carrier = '$carrier' and version <> '${ctx.param.version}'
-         |group by tag
+         |select s1.tag, collect_set(struct(s1.tag, s1.url, s1.url_regexp, s1.url_key)) as old_url_set
+         |from ${table} s1
+         |join business_online_tag_info s2 on s1.tag = s2.tag
+         |where s2.gen_type = '${genType}'
+         |and s1.version <> '${ctx.param.version}' ${ if (genType == 1) {""} else { s" and carrier = '$carrier'" } }
+         |group by s1.tag
          |""".stripMargin).createOrReplaceTempView("rur_2")
 
     val repetitiveTags = ctx.sql(

@@ -2,7 +2,7 @@ package com.mob.dataengine.engine.core.business.dpi
 
 import com.mob.dataengine.commons.helper.DateUtils
 import com.mob.dataengine.commons.utils.BusinessScriptUtils
-import com.mob.dataengine.engine.core.business.dpi.been.{DPIParam, CarrierInfo}
+import com.mob.dataengine.engine.core.business.dpi.been.{CarrierInfo, DPIParam, TagInfo}
 import com.mob.dataengine.engine.core.business.dpi.helper._
 import com.mob.dataengine.engine.core.jobsparam.{BaseJob2, JobContext2}
 import com.mob.dataengine.rpc.RpcClient
@@ -43,6 +43,28 @@ object DpiMktUrl extends BaseJob2[DPIParam] {
 
       CarrierInfo(id, name, genTagSql, preScreenSql, mpSql, genType)
     }
+
+    val business = ctx.param.business.getOrElse(Seq.empty[Int]).mkString("('", "','", "')")
+    ctx.param.tagInfoDF = ctx.param.jdbcTools.readFromTable(ctx.spark,
+      s"""
+         |(
+         |SELECT s1.carrier_id, s1.shard, s1.tag, s1.pattern, s1.status, s1.user_id, s1.group_id, s2.name, s2.gen_type
+         |FROM dpi_carrier_tag s1
+         |JOIN dpi_carrier s2 on s1.carrier_id = s2.id
+         |JOIN dpi_group_user s3 on s1.group_id = s3.group_id
+         |WHERE s1.group_id IN ${business}
+         |AND s1.status = 1
+         |AND DATE_FORMAT(s1.over_time,'%Y%m%d') > DATE_FORMAT(NOW(),'%Y%m%d')
+         |) T
+         |""".stripMargin
+    )
+    ctx.param.tagInfos = ctx.param.tagInfoDF.collect()
+      .map(r => {
+        TagInfo(r.getAs[Int]("carrier_id"),
+          r.getAs[String]("shard"), r.getAs[String]("tag"), r.getAs[String]("pattern"),
+          r.getAs[Int]("status"), r.getAs[String]("user_id"), r.getAs[Int]("group_id"),
+          r.getAs[String]("name"), r.getAs[Int]("gen_type"))
+      })
 
   }
 

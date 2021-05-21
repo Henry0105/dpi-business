@@ -6,6 +6,7 @@ import com.mob.dataengine.commons.{BaseParam2, JobInput2, JobOutput2}
 import com.mob.dataengine.commons.enums.BusinessEnum
 import com.mob.dataengine.commons.utils.{BusinessScriptUtils, JdbcTools}
 import com.mob.dataengine.engine.core.business.dpi.helper.Jdbcs
+import org.apache.spark.sql.{DataFrame, Row}
 import org.json4s.jackson.JsonMethods._
 import org.json4s._
 
@@ -38,6 +39,8 @@ class DPIParam(inputs: Seq[DPIInput], output: DPIOutput) extends BaseParam2(inpu
   val targetTable = "target_table"
   lazy val jdbcTools: JdbcTools = Jdbcs.of(BusinessEnum.dpi)
   var carrierInfos: Array[CarrierInfo] = _
+  var tagInfos: Array[TagInfo] = _
+  var tagInfoDF: DataFrame = _
 
   val value: String = inputs.head.value
   val url: String = inputs.head.url
@@ -60,6 +63,10 @@ case class CarrierInfo(id: Int, name: String, genTagSql: String, preScreenSql: S
        |""".stripMargin
   }
 }
+
+case class TagInfo(carrierId: Int, shard: String,
+                   tag: String, pattern: String, status: Int, userId: String, groupId: Int,
+                   name: String, genType: Int)
 
 /** url结构的样例类 */
 case class UrlStruct(tag: String, url: String, urlRegexp: String, urlKey: String) {

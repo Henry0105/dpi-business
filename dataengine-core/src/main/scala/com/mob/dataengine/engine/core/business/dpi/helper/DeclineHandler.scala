@@ -63,13 +63,15 @@ case class DeclineHandler() extends Handler {
          |     , '' as tag_desc
          |     , '$now' as create_time
          |     , '$now' as update_time
-         |     , 0 as status
+         |     , 3 as status
          |     , '' as tag_config
          |     , '' as user_id
          |     , -1 as group_id
+         |     , tag_group_id
          |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_MP}
          |WHERE carrier = '$name' and version = '${ctx.param.version}'
          |""".stripMargin)
+
     ctx.param.jdbcTools.writeToTable(df, "dpi_carrier_tag", SaveMode.Append)
   }
 }
