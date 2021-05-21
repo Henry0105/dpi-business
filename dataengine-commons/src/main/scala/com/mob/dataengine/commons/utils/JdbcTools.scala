@@ -14,7 +14,7 @@ import scala.collection.mutable.ArrayBuffer
  */
 case class JdbcTools(ip: String, port: Int, db: String, user: String, password: String) {
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
-  val url = s"jdbc:mysql://$ip:$port/$db?useUnicode=true&amp;characterEncoding=UTF-8?autoReconnect=true"
+  val url = s"jdbc:mysql://$ip:$port/$db?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true"
   val connectionProperties: Properties = {
     val connectionProperties = new Properties()
     connectionProperties.put("user", s"${user}")
