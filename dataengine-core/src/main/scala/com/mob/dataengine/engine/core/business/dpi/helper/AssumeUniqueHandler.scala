@@ -1,5 +1,6 @@
 package com.mob.dataengine.engine.core.business.dpi.helper
 
+import com.mob.dataengine.commons.helper.DateUtils
 import com.mob.dataengine.engine.core.business.dpi.been.DPIParam
 import com.mob.dataengine.engine.core.jobsparam.JobContext2
 
@@ -20,6 +21,9 @@ case class AssumeUniqueHandler() extends Handler {
     if (rpNum > 1) {
       ctx.param.cbBean.setError(1)
       setSuccessor(None)
+      ctx.param.jdbcTools.executeUpdateWithoutCheck(
+        s"UPDATE dpi_job_lock SET locked=0,update_time='${DateUtils.getNowTT()}' WHERE version='${ctx.param.version}'")
+
     }
   }
 }
