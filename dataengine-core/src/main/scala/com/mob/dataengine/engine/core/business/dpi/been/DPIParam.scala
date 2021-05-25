@@ -82,7 +82,7 @@ case class UrlStruct(tag: String, url: String, urlRegexp: String, urlKey: String
 /**
  * DPI的回调信息样例类
  *
- * @param errorCode      0:输入的URL不重复  1:输入的URL重复
+ * @param errorCode      0:输入的URL不重复  1:输入的文件中URL重复 2:输入的URL历史重复
  * @param version        版本号
  * @param repetitiveTags 重复的tag map['unicom' -> array('new_tag_1,old_tag_1', 'new_tag_1,old_tag_2', ...)]
  */
