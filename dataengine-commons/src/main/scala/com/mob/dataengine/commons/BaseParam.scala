@@ -22,9 +22,9 @@ case class Encrypt(encryptType: Int, args: Option[Map[String, String]] = None) {
         case 2 => AesHelper.encodeAes(args.get("key"), args.get("iv"), content)
         case 3 => Md5Helper.entryMD5_32(content).substring(8, 24)
         case 4 => Sha256Helper.entrySHA256(content)
-        case 5 => new PidEncrypt().evaluate(content)   // pid(md5)
-        case 6 => new AesEncrypt().evaluate(Sha256Helper.entrySHA256(content))  // pid(sha256)
-        case 7 => new AesEncrypt().evaluate(content)  // 合规版aes加密
+        case 5 => new PidEncrypt().evaluate(content) // pid(md5)
+        case 6 => new AesEncrypt().evaluate(Sha256Helper.entrySHA256(content)) // pid(sha256)
+        case 7 => new AesEncrypt().evaluate(content) // 合规版aes加密
       }
     }
   }
@@ -50,12 +50,19 @@ case class Encrypt(encryptType: Int, args: Option[Map[String, String]] = None) {
   }
 
   def isNone: Boolean = encryptType == 0
+
   def isMd5: Boolean = encryptType == 1
+
   def isAes: Boolean = encryptType == 2
+
   def isMidMd5: Boolean = encryptType == 3
+
   def isSha256: Boolean = encryptType == 4
+
   def isPid: Boolean = encryptType == 5
+
   def isPidSha256: Boolean = encryptType == 6
+
   def isSecAes: Boolean = encryptType == 7
 }
 
@@ -221,6 +228,16 @@ class JobCommon(val jobId: String, val jobName: String, val rpcHost: String, val
      """.stripMargin
 }
 
+class DPIJobCommon(override val jobId: String, override val jobName: String,
+                   override val rpcHost: String, override val rpcPort: Int, override val day: String,
+                   val userId: String) extends JobCommon(jobId, jobName, rpcHost, rpcPort, day) {
+
+  override def toString: String =
+    s"""
+       |jobId=$jobId, jobName=$jobName, rpcHost=$rpcHost, rpcPort=$rpcPort, userId=$userId
+     """.stripMargin
+}
+
 class BaseParam(val inputs: Seq[JobInput], val output: JobOutput) extends Serializable {
   override def toString: String =
     s"""
@@ -229,7 +246,7 @@ class BaseParam(val inputs: Seq[JobInput], val output: JobOutput) extends Serial
 }
 
 /** todo:为了解决继承BaseJob2和使用toDFV2的问题,修改继承[[InputTrait]],改为[[JobInput]];
- *       全部改造完后，修改会继承[[InputTrait]]，弃用[[JobInput]] */
+ * 全部改造完后，修改会继承[[InputTrait]]，弃用[[JobInput]] */
 class JobInput2(override val uuid: String, override val idType: Int = 4,
                 override val sep: Option[String] = None, val header: Int = 0,
                 override val idx: Option[Int] = None, val headers: Option[Seq[String]] = None,
@@ -269,7 +286,7 @@ class BaseParam2(val inputs: Seq[JobInput2], val output: JobOutput2)
   @explanation("是否包含头信息，1 为包含头信息，0 为不包含")
   val header: Int = inputs.head.header
   @explanation("每列的列名")
-  var headers: Option[Seq[String]] = {  // todo 这块应该在解析sql的时候做更好
+  var headers: Option[Seq[String]] = { // todo 这块应该在解析sql的时候做更好
     // 当输入为sql的时候,没有指定headers,设置一个默认值
     if (header > 0 && (inputs.head.headers.isEmpty || inputs.head.headers.get.isEmpty)) {
       Some(Seq("in_id"))

@@ -1,14 +1,20 @@
 package com.mob.dataengine.engine.core.business.dpi
 
+import com.mob.dataengine.commons.{DPIJobCommon, JobCommon}
 import com.mob.dataengine.commons.helper.DateUtils
 import com.mob.dataengine.commons.utils.BusinessScriptUtils
 import com.mob.dataengine.engine.core.business.dpi.been.{CarrierInfo, DPIParam, TagInfo}
 import com.mob.dataengine.engine.core.business.dpi.helper._
-import com.mob.dataengine.engine.core.jobsparam.{BaseJob2, JobContext2}
+import com.mob.dataengine.engine.core.jobsparam.{BaseJob2, JobContext2, JobParamTransForm}
 import com.mob.dataengine.rpc.RpcClient
 import org.apache.spark.sql.{Column, DataFrame}
 
 object DpiMktUrl extends BaseJob2[DPIParam] {
+
+  override def getJobCommon(arg: String): JobCommon = {
+    JobParamTransForm.humpConversion(arg)
+      .extract[DPIJobCommon]
+  }
 
   override def run(ctx: JobContext2[DPIParam]): Unit = {
     prepare(ctx)

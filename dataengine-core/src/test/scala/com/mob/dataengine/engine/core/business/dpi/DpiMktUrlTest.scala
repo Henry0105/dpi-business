@@ -1,6 +1,6 @@
 package com.mob.dataengine.engine.core.business.dpi
 
-import com.mob.dataengine.commons.JobCommon
+import com.mob.dataengine.commons.{DPIJobCommon, JobCommon}
 import com.mob.dataengine.commons.utils.PropUtils
 import com.mob.dataengine.engine.core.business.dpi.been.DPIParam
 import com.mob.dataengine.engine.core.jobsparam.{JobContext2, JobParamTransForm}
@@ -188,7 +188,7 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
     val PARAMS_KEY = "params"
     implicit val formats: DefaultFormats.type = DefaultFormats
     val jobCommon = JobParamTransForm.humpConversion(js)
-      .extract[JobCommon]
+      .extract[DPIJobCommon]
     val params = (JobParamTransForm.humpConversion(js) \ PARAMS_KEY)
       .extract[Seq[DPIParam]]
 

@@ -10,6 +10,7 @@ object JobParamTransForm {
     case ("job_name", x) => ("jobName", x)
     case ("rpc_host", x) => ("rpcHost", x)
     case ("rpc_port", x) => ("rpcPort", x)
+    case ("user_id", x) => ("userId", x)
     case ("id_type", x) => ("idType", x)
     case ("id_types", x) => ("idTypes", x)
     case ("hdfs_output", x) => ("hdfsOutput", x)

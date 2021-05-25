@@ -33,7 +33,7 @@ import scala.collection.mutable
  * 第 2 步骤为transform操作，需要根据具体任务计算逻辑自行重写
  * 第 4 步骤的transform操作，目前需求是为了判断是否保留种子数据，为了方便后续修改需求，因此单独封装
  * 具体适用实例见数据清洗任务（DalaCleaning）
- * */
+ **/
 
 @author("jiandd")
 @createTime("2020-01-06")
@@ -74,16 +74,16 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
   def cacheInput: Boolean
 
   /**
-   * @param df transform dataframe
+   * @param df  transform dataframe
    * @param ctx 任务上下文
-   * */
+   **/
   @explanation("transform 方法，不包含默认方法，需要根据任务的具体逻辑 进行实现")
   def transformData(df: DataFrame, ctx: JobContext2[T]): DataFrame
 
 
   /**
    * @param ctx 任务执行上下文
-   * */
+   **/
   @explanation("创建 输入数据的 dataframe ， source dataframe")
   @sourceTable("rp_dataengine.data_opt_cache_new,rp_dataengine.data_opt_cache")
   def buildInputDataFrame(ctx: JobContext2[T]): DataFrame = {
@@ -101,7 +101,7 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
         // 去掉headers行
         .filter(s => !s.equals(ctx.param.headers.get.map(_.substring(3))
           .mkString(ctx.param.sep.get)))
-        .map{ r =>
+        .map { r =>
           val arr: Seq[String] = r.split(
             Pattern.quote(ctx.param.sep.get),
             ctx.param.headers.get.size
@@ -115,9 +115,9 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
 
 
   /**
-   * @param df 持久化到hive的dataframe
+   * @param df  持久化到hive的dataframe
    * @param ctx 任务上下文
-   * */
+   **/
   @explanation("计算后的数据持久化到hive sink hive")
   @targetTable("rp_dataengine.data_opt_cache_new")
   def persist2Hive(df: DataFrame, ctx: JobContext2[T]): Unit = {
@@ -150,20 +150,20 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
 
   /**
    * @param ctx 任务上下文
-   * */
+   **/
   @explanation("创建 match_ids 列，根据任务需求，实现此方法创建match_ids")
   def createMatchIdsCol(ctx: JobContext2[T]): Seq[Column]
 
 
   /**
-   * @param df 输入dataframe
+   * @param df  输入dataframe
    * @param ctx 任务上下文
-   * */
+   **/
   @explanation("数据持久化到 HDFS，如果数据需要导出的时候需要将数据持久化到 HDFS， sink HDFS")
   def write2HDFS(df: DataFrame, ctx: JobContext2[T]): Unit = {
     var resultDF = df
     if (!ctx.param.output.hdfsOutput.isEmpty) {
-      if (ctx.param.output.limit.getOrElse(-1) != -1 ) {
+      if (ctx.param.output.limit.getOrElse(-1) != -1) {
         resultDF = resultDF.limit(ctx.param.output.limit.get)
       }
       resultDF.repartition(1).write.mode(SaveMode.Overwrite)
@@ -175,9 +175,9 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
 
 
   /**
-   * @param df 输入DF
+   * @param df  输入DF
    * @param ctx 任务上下文
-   * */
+   **/
   @explanation("持久化到HDFS前需要判断 是否需要导出种子包 keepSeed：1 表示导出，0 表示不导出")
   def transformSeedDF(df: DataFrame, ctx: JobContext2[T]): DataFrame = {
     val dataFrame = if (ctx.param.output.keepSeed != 1) {
@@ -191,7 +191,7 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
 
   /**
    * @param ctx 任务上下文
-   * */
+   **/
   @explanation("通过RPC发送任务内的具体数据，如输出uuid，idCnt，matchCnt等信息")
   def sendRPC(ctx: JobContext2[T]): Unit = {
     if (ctx.jobCommon.hasRPC()) {
@@ -228,8 +228,7 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
     println(s"arg ==> $arg")
 
     val PARAMS_KEY = "params"
-    val jobCommon = JobParamTransForm.humpConversion(arg)
-      .extract[JobCommon]
+    val jobCommon: JobCommon = getJobCommon(arg)
     val params = (JobParamTransForm.humpConversion(arg) \ PARAMS_KEY)
       .extract[Seq[T]]
 
@@ -243,9 +242,14 @@ abstract class BaseJob2[T <: BaseParam2](implicit mf: Manifest[Seq[T]])
     }
 
 
-    params.foreach{ param =>
+    params.foreach { param =>
       jobContext = JobContext2(spark, jobCommon, param)
       run(jobContext)
     }
+  }
+
+  def getJobCommon(arg: String): JobCommon = {
+    JobParamTransForm.humpConversion(arg)
+      .extract[JobCommon]
   }
 }

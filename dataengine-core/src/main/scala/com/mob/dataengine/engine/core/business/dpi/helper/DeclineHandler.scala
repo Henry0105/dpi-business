@@ -1,5 +1,6 @@
 package com.mob.dataengine.engine.core.business.dpi.helper
 
+import com.mob.dataengine.commons.DPIJobCommon
 import com.mob.dataengine.commons.helper.DateUtils
 import com.mob.dataengine.commons.utils.PropUtils
 import com.mob.dataengine.engine.core.business.dpi.DpiMktUrl.query
@@ -55,6 +56,7 @@ case class DeclineHandler() extends Handler {
   def persist2Mysql(ctx: JobContext2[DPIParam], id: Int, name: String): Unit = {
     val now = DateUtils.getNowTT()
     val _business = ctx.param.business.getOrElse(Seq(-1)).head
+    val _userId = ctx.jobCommon.asInstanceOf[DPIJobCommon].userId
     val df = ctx.sql(
       s"""
          |SELECT $id as carrier_id
@@ -66,8 +68,8 @@ case class DeclineHandler() extends Handler {
          |     , '$now' as update_time
          |     , 3 as status
          |     , '' as tag_config
-         |     , '' as user_id
-         |     , ${_business} as group_id
+         |     , '${_userId}' as user_id
+         |     , '${_business}' as group_id
          |     , tag_group_id
          |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_MP}
          |WHERE carrier = '$name' and version = '${ctx.param.version}'
