@@ -139,7 +139,13 @@ case class GenTagV3Handler() extends Handler {
       s"""
          |select tag, collect_set(struct(tag, url, url_regexp, url_key)) as new_url_set
          |from ${table}
-         |where version = '${ctx.param.version}' ${ if (genType == 1) {""} else { s" and carrier = '$carrier'" } }
+         |where version = '${ctx.param.version}' ${
+        if (genType == 1) {
+          ""
+        } else {
+          s" and carrier = '$carrier'"
+        }
+      }
          |group by tag
          |""".stripMargin).cache()
     df.createOrReplaceTempView("rur_1")
@@ -150,7 +156,13 @@ case class GenTagV3Handler() extends Handler {
          |from ${table} s1
          |join business_online_tag_info s2 on s1.tag = s2.tag
          |where s2.gen_type = '${genType}'
-         |and s1.version <> '${ctx.param.version}' ${ if (genType == 1) {""} else { s" and carrier = '$carrier'" } }
+         |and s1.version <> '${ctx.param.version}' ${
+        if (genType == 1) {
+          ""
+        } else {
+          s" and carrier = '$carrier'"
+        }
+      }
          |group by s1.tag
          |""".stripMargin).createOrReplaceTempView("rur_2")
 
@@ -166,8 +178,12 @@ case class GenTagV3Handler() extends Handler {
          |""".stripMargin).collect().map {
       r => r.getAs[String]("repetitive_tags")
     }
-    ctx.param.cbBean.setError(2)
-    ctx.param.cbBean.setRepetitiveTags(carrier, repetitiveTags)
+
+    if (repetitiveTags != null && repetitiveTags.nonEmpty) {
+      ctx.param.cbBean.setError(2)
+      ctx.param.cbBean.setRepetitiveTags(carrier, repetitiveTags)
+    }
+
   }
 
 }
