@@ -166,7 +166,7 @@ case class GenTagV3Handler() extends Handler {
          |""".stripMargin).collect().map {
       r => r.getAs[String]("repetitive_tags")
     }
-
+    ctx.param.cbBean.setError(2)
     ctx.param.cbBean.setRepetitiveTags(carrier, repetitiveTags)
   }
 
