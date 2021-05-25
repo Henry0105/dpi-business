@@ -21,7 +21,7 @@ import org.json4s._
  */
 case class DPIInput(override val uuid: String, override val sep: Option[String] = None,
                     value: String, url: String, carriers: Seq[String],
-                    business: Option[Seq[Int]] = None, catel1: Option[Int] = None)
+                    business: Option[Seq[String]] = None, catel1: Option[Int] = None)
   extends JobInput2(uuid = uuid, sep = sep) {
 
   override def toString: String =
@@ -46,7 +46,12 @@ class DPIParam(inputs: Seq[DPIInput], output: DPIOutput) extends BaseParam2(inpu
   val url: String = inputs.head.url
   val version: String = inputs.head.uuid
   val carriers: Seq[String] = inputs.head.carriers.map(_.trim)
-  val business: Option[Seq[Int]] = inputs.head.business
+  val business: Option[Seq[Int]] = {
+    inputs.head.business match {
+      case Some(value) => Some(value.map(_.toInt))
+      case None => None
+    }
+  }
   val catel1: Option[Int] = inputs.head.catel1
   val cbBean: DPICallBack = DPICallBack(version = version)
 
