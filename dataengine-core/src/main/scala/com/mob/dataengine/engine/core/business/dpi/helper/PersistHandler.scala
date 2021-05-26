@@ -38,7 +38,7 @@ case class PersistHandler() extends Handler {
       case 5 => PropUtils.HIVE_TABLE_RP_DPI_FIN_TAG_URL_MAPPING
       case 3 => PropUtils.HIVE_TABLE_RP_DPI_MOBEYE_TAG_URL_MAPPING
       case 4 => PropUtils.HIVE_TABLE_RP_DPI_GA_TAG_URL_MAPPING
-      case 5 => ""
+      case 6 => ""
       case 1 => ""
     }
   }
