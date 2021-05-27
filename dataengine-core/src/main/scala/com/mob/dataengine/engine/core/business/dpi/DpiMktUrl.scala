@@ -22,7 +22,7 @@ object DpiMktUrl extends BaseJob2[DPIParam] {
     val chain = new HandlerChain()
     chain.addHandler(InputHandler())
     chain.addHandler(CleanDataAndParseURLHandler())
-    chain.addHandler(AssumeUniqueHandler())
+//    chain.addHandler(AssumeUniqueHandler())
     chain.addHandler(GenTagV3Handler())
     chain.addHandler(DeclineHandler())
     chain.addHandler(PersistHandler())
