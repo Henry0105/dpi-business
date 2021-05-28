@@ -99,6 +99,21 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
       tableName = PropUtils.HIVE_TABLE_RP_DPI_GA_TAG_URL_MAPPING)
     createTable(gaDF)
 
+    val diDF = FileUtils.getSqlScript("conf/sql_scripts/dm_tables_create/dm_dpi_mapping/" +
+      "dpi_mkt_url.sql",
+      tableName = PropUtils.HIVE_TABLE_RP_DPI_DI_TAG_URL_MAPPING)
+    createTable(diDF)
+
+    val sjhzDF = FileUtils.getSqlScript("conf/sql_scripts/dm_tables_create/dm_dpi_mapping/" +
+      "dpi_mkt_url.sql",
+      tableName = PropUtils.HIVE_TABLE_RP_DPI_SJHZ_TAG_URL_MAPPING)
+    createTable(sjhzDF)
+
+    val zyDF = FileUtils.getSqlScript("conf/sql_scripts/dm_tables_create/dm_dpi_mapping/" +
+      "dpi_mkt_url.sql",
+      tableName = PropUtils.HIVE_TABLE_RP_DPI_ZY_TAG_URL_MAPPING)
+    createTable(zyDF)
+
     prepareMapping()
   }
 
@@ -177,7 +192,7 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
          |          "uuid": "$version",
          |          "url":"src/test/resources/business/dpi/1123_game_zj.csv",
          |          "carriers": ["unicom","henan_mobile","shandong_mobile","hebei_mobile","anhui_mobile","jiangsu_mobile","tianjin_mobile","zhejiang_mobile","telecom"],
-         |          "business": ["5"]
+         |          "business": ["8"]
          |       }]
          |    }
          |  ]
@@ -208,7 +223,17 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
       .where($"version" === s"$version").show(false)
     spark.table(PropUtils.HIVE_TABLE_RP_DPI_MARKETPLUS_TAG_URL_MAPPING)
       .where($"version" === s"$version").show(false)
+    spark.table(PropUtils.HIVE_TABLE_RP_DPI_MOBEYE_TAG_URL_MAPPING)
+      .where($"version" === s"$version").show(false)
+    spark.table(PropUtils.HIVE_TABLE_RP_DPI_GA_TAG_URL_MAPPING)
+      .where($"version" === s"$version").show(false)
     spark.table(PropUtils.HIVE_TABLE_RP_DPI_FIN_TAG_URL_MAPPING)
+      .where($"version" === s"$version").show(false)
+    spark.table(PropUtils.HIVE_TABLE_RP_DPI_DI_TAG_URL_MAPPING)
+      .where($"version" === s"$version").show(false)
+    spark.table(PropUtils.HIVE_TABLE_RP_DPI_SJHZ_TAG_URL_MAPPING)
+      .where($"version" === s"$version").show(false)
+    spark.table(PropUtils.HIVE_TABLE_RP_DPI_ZY_TAG_URL_MAPPING)
       .where($"version" === s"$version").show(false)
 
   }

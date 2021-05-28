@@ -53,7 +53,7 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag_hz`
         `version` string COMMENT '版本记录')
     stored as orc;
 
-CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag_init`
+CREATE TABLE `dm_dpi_mapping_test.dm_dpi_mkt_tag_init`
 (
     `tag`            string,
     `rn`             int,
@@ -63,7 +63,7 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag_init`
     stored as orc;
 
 
-CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_withtag`
+CREATE TABLE `dm_dpi_mapping_test.tmp_url_operatorstag`
 (
     `tag`           string COMMENT 'tag_id',
     `url`           string COMMENT '原始url',
@@ -91,7 +91,7 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_withtag`
         `version` string COMMENT '版本记录')
     stored as orc;
 
-CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_withtag_hz`
+CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_withtag`
 (
     `tag`           string COMMENT 'tag_id',
     `url`           string COMMENT '原始url',
@@ -239,6 +239,84 @@ CREATE TABLE `dm_dpi_mapping_test.mobeye_tag_url_mapping`
         `version` string COMMENT '版本记录');
 
 CREATE TABLE `dm_dpi_mapping_test.ga_tag_url_mapping`
+(
+    `tag`           string COMMENT 'tag_id',
+    `url`           string COMMENT '原始url',
+    `url_regexp`    string COMMENT '清洗后URL',
+    `protocal_type` string COMMENT '协议',
+    `root_domain`   string COMMENT 'root',
+    `host`          string COMMENT 'host',
+    `file`          string COMMENT 'file',
+    `path`          string COMMENT 'path',
+    `query0`        string COMMENT 'query0',
+    `url_key`       string COMMENT 'url_key',
+    `source_type`   string COMMENT '来源',
+    `os`            string COMMENT 'iOS/Anorid',
+    `cate_l1`       string COMMENT '业务类型',
+    `period`        string COMMENT '业务周期',
+    `url_action`    string COMMENT 'url行为',
+    `describe_1`    string COMMENT '描述1',
+    `describe_2`    string COMMENT '描述2',
+    `id`            string COMMENT '分组id',
+    `date`          string COMMENT '提交日期',
+    `plat`          string COMMENT '业务线'
+)
+    PARTITIONED BY (
+        `version` string COMMENT '版本记录');
+
+CREATE TABLE `dm_dpi_mapping_test.di_tag_url_mapping`
+(
+    `tag`           string COMMENT 'tag_id',
+    `url`           string COMMENT '原始url',
+    `url_regexp`    string COMMENT '清洗后URL',
+    `protocal_type` string COMMENT '协议',
+    `root_domain`   string COMMENT 'root',
+    `host`          string COMMENT 'host',
+    `file`          string COMMENT 'file',
+    `path`          string COMMENT 'path',
+    `query0`        string COMMENT 'query0',
+    `url_key`       string COMMENT 'url_key',
+    `source_type`   string COMMENT '来源',
+    `os`            string COMMENT 'iOS/Anorid',
+    `cate_l1`       string COMMENT '业务类型',
+    `period`        string COMMENT '业务周期',
+    `url_action`    string COMMENT 'url行为',
+    `describe_1`    string COMMENT '描述1',
+    `describe_2`    string COMMENT '描述2',
+    `id`            string COMMENT '分组id',
+    `date`          string COMMENT '提交日期',
+    `plat`          string COMMENT '业务线'
+)
+    PARTITIONED BY (
+        `version` string COMMENT '版本记录');
+
+CREATE TABLE `dm_dpi_mapping_test.sjhz_tag_url_mapping`
+(
+    `tag`           string COMMENT 'tag_id',
+    `url`           string COMMENT '原始url',
+    `url_regexp`    string COMMENT '清洗后URL',
+    `protocal_type` string COMMENT '协议',
+    `root_domain`   string COMMENT 'root',
+    `host`          string COMMENT 'host',
+    `file`          string COMMENT 'file',
+    `path`          string COMMENT 'path',
+    `query0`        string COMMENT 'query0',
+    `url_key`       string COMMENT 'url_key',
+    `source_type`   string COMMENT '来源',
+    `os`            string COMMENT 'iOS/Anorid',
+    `cate_l1`       string COMMENT '业务类型',
+    `period`        string COMMENT '业务周期',
+    `url_action`    string COMMENT 'url行为',
+    `describe_1`    string COMMENT '描述1',
+    `describe_2`    string COMMENT '描述2',
+    `id`            string COMMENT '分组id',
+    `date`          string COMMENT '提交日期',
+    `plat`          string COMMENT '业务线'
+)
+    PARTITIONED BY (
+        `version` string COMMENT '版本记录');
+
+CREATE TABLE `dm_dpi_mapping_test.zy_tag_url_mapping`
 (
     `tag`           string COMMENT 'tag_id',
     `url`           string COMMENT '原始url',

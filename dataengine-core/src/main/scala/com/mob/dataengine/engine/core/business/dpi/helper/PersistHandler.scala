@@ -34,12 +34,14 @@ case class PersistHandler() extends Handler {
 
   def targetTable(businessID: Int): String = {
     businessID match {
+      case 1 => ""
       case 2 => PropUtils.HIVE_TABLE_RP_DPI_MARKETPLUS_TAG_URL_MAPPING
-      case 5 => PropUtils.HIVE_TABLE_RP_DPI_FIN_TAG_URL_MAPPING
       case 3 => PropUtils.HIVE_TABLE_RP_DPI_MOBEYE_TAG_URL_MAPPING
       case 4 => PropUtils.HIVE_TABLE_RP_DPI_GA_TAG_URL_MAPPING
-      case 6 => ""
-      case 1 => ""
+      case 5 => PropUtils.HIVE_TABLE_RP_DPI_FIN_TAG_URL_MAPPING
+      case 6 => PropUtils.HIVE_TABLE_RP_DPI_DI_TAG_URL_MAPPING
+      case 7 => PropUtils.HIVE_TABLE_RP_DPI_SJHZ_TAG_URL_MAPPING
+      case 8 => PropUtils.HIVE_TABLE_RP_DPI_ZY_TAG_URL_MAPPING
     }
   }
 }

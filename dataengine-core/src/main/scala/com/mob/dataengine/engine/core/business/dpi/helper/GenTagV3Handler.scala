@@ -77,7 +77,8 @@ case class GenTagV3Handler() extends Handler {
             param.srcTable -> "dpi_tb3",
             "maxTag" -> maxTag,
             s"${param.targetTable}_1" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ,
-            s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ
+            s"${param.targetTable}_2" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ,
+            "tag_init_table" -> PropUtils.HIVE_TABLE_RP_DPI_MKT_TAG_INIT
           )))
 
           reportUrlRepetition(ctx, info.name, PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_TAG_HZ, info.genType)
