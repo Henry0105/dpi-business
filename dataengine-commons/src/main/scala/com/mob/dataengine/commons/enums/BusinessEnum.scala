@@ -12,7 +12,7 @@ object BusinessEnum extends Enumeration {
   val mobfin: BusinessType = Value(5, "mobfin")
   val di: BusinessType = Value(6, "di")
   val sjhz: BusinessType = Value(7, "sjhz")
-  val zy: BusinessType = Value(8, "zy")
+//  val zy: BusinessType = Value(8, "zy")
 
 
 
@@ -25,7 +25,7 @@ object BusinessEnum extends Enumeration {
       case 5 => mobfin
       case 6 => di
       case 7 => sjhz
-      case 8 => zy
+//      case 8 => zy
     }
   }
 
@@ -38,7 +38,7 @@ object BusinessEnum extends Enumeration {
       case 5 => "金融线"
       case 6 => "平台"
       case 7 => "数据合作"
-      case 8 => "智弈"
+//      case 8 => "智弈"
     }
   }
 

@@ -34,7 +34,7 @@ case class DeclineHandler() extends Handler {
             param.targetTable -> PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_PRE_SCREEN)))
     }
 
-    param.carrierInfos.withFilter(info => StringUtils.isNotBlank(info.mpSql))
+    param.carrierInfos.sortBy(_.name).withFilter(info => StringUtils.isNotBlank(info.mpSql))
       .withFilter(info => param.carriers.contains(info.name)).foreach {
       info =>
 

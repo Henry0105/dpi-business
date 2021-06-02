@@ -444,7 +444,7 @@ object PropUtils {
   lazy val HIVE_TABLE_RP_DPI_GA_TAG_URL_MAPPING: String = getProperty("hive_table_rp_dpi_ga_tag_url_mapping")
   lazy val HIVE_TABLE_RP_DPI_DI_TAG_URL_MAPPING: String = getProperty("hive_table_rp_dpi_di_tag_url_mapping")
   lazy val HIVE_TABLE_RP_DPI_SJHZ_TAG_URL_MAPPING: String = getProperty("hive_table_rp_dpi_sjhz_tag_url_mapping")
-  lazy val HIVE_TABLE_RP_DPI_ZY_TAG_URL_MAPPING: String = getProperty("hive_table_rp_dpi_zy_tag_url_mapping")
+//  lazy val HIVE_TABLE_RP_DPI_ZY_TAG_URL_MAPPING: String = getProperty("hive_table_rp_dpi_zy_tag_url_mapping")
 
 }
 
