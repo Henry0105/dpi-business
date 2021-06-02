@@ -36,7 +36,7 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag`
         `version` string COMMENT 'day')
     stored as orc;
 
-CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_tag_hz`
+CREATE TABLE `dm_dpi_mapping_test.dm_dpi_mkt_url_tag_v2`
 (
     `tag`           string COMMENT 'tag_id',
     `url`           string COMMENT 'url',
