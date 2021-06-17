@@ -15,7 +15,7 @@ case class CleanDataAndParseURLHandler() extends Handler {
    */
   override def handle(ctx: JobContext2[DPIParam]): Unit = {
     val queries = BusinessScriptUtils.getQueriesFromFile("cleandate_parseurl.sql")
-    query(ctx, queries, None)
+    query(ctx, queries, Some(Map("dim_domain" -> PropUtils.HIVE_TABLE_RP_DPI_DIM_DOMAIN)))
   }
 
 }

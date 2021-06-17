@@ -122,7 +122,7 @@ FROM (
              date
       FROM dpi_tb2
      ) s
-LEFT JOIN dm_dpi_mapping_test.dim_dpi_domain t1
+LEFT JOIN $dim_domain t1
 ON host_rev_0 = t1.domain
-LEFT JOIN dm_dpi_mapping_test.dim_dpi_domain t2
+LEFT JOIN $dim_domain t2
 ON host_rev_1 = t2.domain
