@@ -191,7 +191,7 @@ class DpiMktUrlTest extends FunSuite with LocalSparkSession {
          |          "sep" : ",",
          |          "uuid": "$version",
          |          "url":"src/test/resources/business/dpi/1123_game_zj.csv",
-         |          "carriers": ["unicom","henan_mobile","shandong_mobile","hebei_mobile","anhui_mobile","jiangsu_mobile","tianjin_mobile","zhejiang_mobile","telecom"],
+         |          "carriers": ["unicom","henan_mobile","shandong_mobile","hebei_mobile","anhui_mobile","jiangsu_mobile","tianjin_mobile","zhejiang_mobile","telecom","sichuan_mobile"],
          |          "business": ["2"]
          |       }]
          |    }
