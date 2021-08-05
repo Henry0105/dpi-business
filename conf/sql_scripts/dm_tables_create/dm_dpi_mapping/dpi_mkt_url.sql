@@ -152,7 +152,8 @@ CREATE TABLE `dm_dpi_mapping_test.dpi_mkt_url_tool_matcher_pattern`
 (
     `tag`     string Comment 'tag',
     `tag_group_id` string Comment 'tag 分组',
-    `pattern` string COMMENT 'matcher_pattern'
+    `pattern` string COMMENT 'matcher_pattern',
+    `cate_l1` string COMMENT '行业'
 )
     PARTITIONED BY (
         `carrier` string COMMENT '运营商',

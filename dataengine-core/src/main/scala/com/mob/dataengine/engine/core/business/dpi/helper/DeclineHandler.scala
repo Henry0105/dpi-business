@@ -62,6 +62,7 @@ case class DeclineHandler() extends Handler {
          |SELECT $id as carrier_id
          |     , version as shard
          |     , tag
+         |     , cate_l1
          |     , pattern
          |     , '' as tag_desc
          |     , '$now' as create_time
