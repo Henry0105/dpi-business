@@ -77,5 +77,75 @@ case class DeclineHandler() extends Handler {
          |""".stripMargin)
 
     ctx.param.jdbcTools.writeToTable(df, "dpi_carrier_tag", SaveMode.Append)
+
+    try {
+
+      ctx.sql(
+        s"""
+           |SELECT $id as carrier_id
+           |     , version as shard
+           |     , tag
+           |     , cate_l1
+           |     , pattern
+           |     , '' as tag_desc
+           |     , '$now' as create_time
+           |     , '$now' as update_time
+           |     , 3 as status
+           |     , '' as tag_config
+           |     , '${_userId}' as user_id
+           |     , '${_business}' as group_id
+           |     , tag_group_id
+           |     ,version
+           |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_MP}
+           |WHERE carrier = '$name' and version = '${ctx.param.version}'
+           |""".stripMargin).createOrReplaceTempView("tmptable")
+
+      ctx.sql(
+        s"""
+           |SELECT tag, describe_1, describe_2, version from (
+           |SELECT tag, describe_1, describe_2, version
+           |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG}
+           |WHERE version = '${ctx.param.version}'
+           |union all
+           |SELECT tag, describe_1, describe_2, version
+           |FROM ${PropUtils.HIVE_TABLE_RP_DPI_MKT_URL_WITHTAG_HZ}
+           |WHERE version = '${ctx.param.version}'
+           |) ttt
+           |group by tag, describe_1, describe_2, version
+           |""".stripMargin
+      ).createOrReplaceTempView("t1")
+
+      ctx.spark.table("t1").show(false)
+
+      val df2 = ctx.sql(
+        s"""
+           |SELECT $id as carrier_id
+           |     , a.version as shard
+           |     , a.tag
+           |     , a.cate_l1
+           |     , a.pattern
+           |     ,b.describe_1 describe_1
+           |     ,b.describe_2 describe_2
+           |     , '' as tag_desc
+           |     , '$now' as create_time
+           |     , '$now' as update_time
+           |     , 3 as status
+           |     , '' as tag_config
+           |     , '${_userId}' as user_id
+           |     , '${_business}' as group_id
+           |     , a.tag_group_id
+           |from
+           |tmptable a left join t1 b on a.tag = b.tag and a.version = b.version
+           |""".stripMargin
+      )
+      df2.show(false)
+      ctx.param.jdbcTools.writeToTable(df2, "dpi_carrier_tag_new", SaveMode.Append)
+    } catch {
+      case e: Throwable =>
+        e.printStackTrace()
+      case e2: Error =>
+        e2.printStackTrace()
+    }
+
   }
 }
